@@ -259,3 +259,12 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
+# Ignored local folders/files including configurations
+/mothernaturesfarm.web/ConnectionStrings.Local.config
+/mothernaturesfarm.web/ConnectionStrings.config
+/mothernaturesfarm.web/AppSettings.Local.config
+/mothernaturesfarm.web/AppSettings.config
+/mothernaturesfarm.web/Smtp.config
+/mothernaturesfarm.web/MachineKey.config
+/Documents
