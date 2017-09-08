@@ -1,0 +1,6 @@
+.button {
+	font-family: $accent-font;
+	&:hover {
+		background: $link-hover;
+	}
+}

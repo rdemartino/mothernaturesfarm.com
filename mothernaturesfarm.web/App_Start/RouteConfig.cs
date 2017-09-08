@@ -13,7 +13,12 @@ namespace mothernaturesfarm.web
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute("OurStory", "OurStory", new {Controller = "Home", Action = "OurStory"});
+            routes.MapRoute("OurStory", "Our-Story", new {Controller = "Home", Action = "OurStory"});
+            routes.MapRoute("Calendar", "calendar", new { Controller = "Home", Action = "calendar" });
+            routes.MapRoute("Parties", "parties", new { Controller = "Home", Action = "parties" });
+            routes.MapRoute("ContactUs", "contactus", new { Controller = "Home", Action = "contactus" });
+            routes.MapRoute("Location", "location", new { Controller = "Home", Action = "location" });
+
 
             routes.MapRoute(
                 name: "Default",

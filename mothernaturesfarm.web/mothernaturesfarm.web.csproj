@@ -151,9 +151,26 @@
   <ItemGroup>
     <Content Include="Content\Images\hours-sign.png" />
     <Content Include="Content\Images\img.png" />
+    <Content Include="Content\Images\logo-white-200-outline.jpg" />
     <Content Include="Content\Images\mothernaturesfarm-logo-white.png" />
     <Content Include="Content\Images\mothernaturesfarm-logo.png" />
+    <Content Include="Content\Images\newsletter-bg.jpg" />
+    <Content Include="Content\Images\photo-alexandersmaze.jpg" />
+    <Content Include="Content\Images\photo-family-1.jpg" />
+    <Content Include="Content\Images\photo-family-2.jpg" />
+    <Content Include="Content\Images\photo-family-3.jpg" />
+    <Content Include="Content\Images\photo-family-4.jpg" />
+    <Content Include="Content\Images\photo-halloween-1.jpg" />
+    <Content Include="Content\Images\photo-market-october.jpg" />
+    <Content Include="Content\Images\photo-party-1.jpg" />
+    <Content Include="Content\Images\photo-party-2.jpg" />
+    <Content Include="Content\Images\photo-party-3.jpg" />
+    <Content Include="Content\Images\photo-pumpkinpatch-1.jpg" />
+    <Content Include="Content\Images\photo-snowday-1.jpg" />
+    <Content Include="Content\Images\photo-wade-1.jpg" />
     <Content Include="Content\Images\photo-wide-1.jpg" />
+    <Content Include="Content\Images\photo-wide-calendar.jpg" />
+    <Content Include="Content\Images\photo-wide-parties.jpg" />
     <Content Include="Content\Images\photo-wide-pumpkinpatch.jpg" />
     <Content Include="Content\Images\photo-wide-story.jpg" />
     <Content Include="Content\Images\photo-wide-truck.jpg" />
@@ -171,6 +188,9 @@
     <Content Include="Content\Scripts\moment.min.js" />
     <Content Include="Content\Scripts\what-input.js" />
     <Content Include="Content\Styles\foundation.css" />
+    <Content Include="Content\Styles\style.min.css">
+      <DependentUpon>style.css</DependentUpon>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Styles\style.css" />
@@ -182,6 +202,10 @@
     <Content Include="ConnectionStrings.config" />
     <Content Include="AppSettings.Local.Config" />
     <Content Include="AppSettings.config" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Content\Scripts\jquery-1.11.0.intellisense.js" />
     <Content Include="Content\Scripts\jquery-1.11.0.js" />
     <Content Include="Content\Scripts\jquery-1.11.0.min.js" />
@@ -209,6 +233,12 @@
     <Content Include="MachineKey.config" />
     <None Include="Properties\PublishProfiles\mothernaturesfarm - Web Deploy.pubxml" />
     <Content Include="Smtp.config" />
+    <Content Include="Views\Home\Calendar.cshtml" />
+    <Content Include="Views\Home\Parties.cshtml" />
+    <Content Include="Views\Home\ContactUs.cshtml" />
+    <Content Include="Views\Home\Location.cshtml" />
+    <Content Include="Views\Shared\_PageHeader.cshtml" />
+    <Content Include="Views\Shared\_NewsletterSignup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

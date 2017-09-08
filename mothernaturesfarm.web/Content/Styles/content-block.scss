@@ -1,0 +1,100 @@
+.content-block {
+	margin: 0 ($box-margin/2) $box-margin;
+	position: relative;
+	h2 {
+	    text-shadow: -2px 1px 0 $white;
+	}
+	.sidebar {
+		color: $white;
+		text-align: center;
+		a {
+			color: $white;
+		}
+		.telephone {
+			font-family: $accent-font;
+			font-size: 18px;
+		}
+		h3 {
+			font-size: 28px;
+		}
+	}
+	.inner {
+		padding: $box-margin;
+	}
+	&.blue {
+		.sidebar-left, .sidebar-right {
+			background: $brand-blue;
+		}
+		h2 {
+			color: $brand-blue;
+		}
+	}
+	&.green {
+		.sidebar-left, .sidebar-right {
+			background: $brand-green;
+		}
+		h2 {
+			color: $brand-green;
+		}
+
+	}
+	&.orange {
+		.sidebar-left, .sidebar-right {
+			background: $brand-orange;
+		}
+		h2 {
+			color: $brand-orange;
+		}
+
+	}
+}
+.newsletter-signup {
+	.row {
+		margin: 0;
+	}
+	.copy {
+		padding-top: 10px;
+		color: $white;
+		text-shadow: -1px 1px 0 $black;
+	}
+	.form-ctr {
+	}
+}
+// Responsive
+@media all and (min-width: $breakpoint-medium) {
+// Tablet & Up
+.content-block {
+	.sidebar {
+		top: 0; bottom: 0;
+		position: absolute;
+	}
+	.sidebar-right {
+		right: 0;
+		border-left: $box-border-size solid $box-border-color;
+	}
+	.sidebar-left {
+		left: 0;
+		border-right: $box-border-size solid $box-border-color;
+	}
+
+}
+.newsletter-signup {
+	h3, p {
+		margin-bottom: 0;
+	}
+	.copy {
+		padding: 20px 0 20px 20px;
+	}
+	.form-ctr {
+		padding-top: 30px;
+		padding-right: 50px;
+	}
+}
+// End Tablet & Up
+}
+
+@media all and (min-width: $breakpoint-large) {
+// Desktop & Up
+
+// End Desktop & Up
+}

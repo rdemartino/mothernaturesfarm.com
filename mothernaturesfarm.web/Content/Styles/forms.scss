@@ -1,0 +1,17 @@
+// Foundation Overrides
+
+[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'],
+textarea {
+	border-width: 2px;
+	border-color: $main-color;
+    box-shadow: none;
+    &:focus {
+		border-width: 2px;
+		border-color: $main-color;
+	    box-shadow: none;
+
+    }
+}
+.input-group-button .button {
+	//background: $brand-tan;
+}

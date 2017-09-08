@@ -1,0 +1,419 @@
+$nav-height: 85px;
+
+body {
+	background-color: $body-background;
+	background-image: url($baseurl+'/Content/Images/sitebg.jpg');
+	background-size: 800px 534px;
+}
+.site-container {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+.column {
+	padding-left: ($box-margin/2);
+	padding-right: ($box-margin/2);
+}
+
+
+
+
+.top-bar, .top-bar ul {
+	background: $page-background;
+}
+.top-bar {
+	margin-top: ($box-margin/2);
+	padding: 0 $box-margin;
+	position: relative;
+}
+.top-bar-hours {
+	position: absolute;
+	top: 79px;
+	right: 0;
+	z-index: 10;
+	background-image: url($baseurl+'/Content/Images/hours-sign.png');
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-size: 150px 115px;
+	width: 150px;
+	height: 115px;
+	text-align: center;
+	padding-top: 46px;
+	strong, em {
+		font-size: 14px;
+		display: block;
+		font-style: normal;
+		font-family: $accent-font;
+		text-shadow: 1px 1px 0 lighten($brand-tan,20);
+		padding-right: 8px;
+	}
+	em {
+		font-size: 18px;
+	}
+	transform: rotate(9deg);
+	animation: hours-sign 10s forwards infinite;
+}
+// Keyframes 
+@keyframes hours-sign {
+  0% {
+  	transform: rotate(9deg);
+  }
+  4% {
+  	transform: rotate(5deg);
+  }
+  10% {
+  	transform: rotate(9deg);
+  }
+}
+.top-bar-left {
+	.menu, .menu-logo {
+		height: $nav-height;
+		line-height: $nav-height;
+		a, button {
+			display: inline-block;
+			font-family: $accent-font;
+		    padding: 0.7rem 8px;
+			&:hover {
+				color: $link-hover;
+			}
+		}
+	}
+	.menu {
+		//display: none;
+	}
+	.menu-logo {
+		width: 135px;
+		float: left;
+		margin-right: 10px;
+		a {
+			padding: 0;
+		}
+		img {
+			width: 135px;
+
+		}
+	}
+}
+.menu-toggle {
+	z-index: 102;
+	position: fixed;
+	top: $box-margin; right: $box-margin;
+}
+
+.menu-icon-ani {
+  span {
+    display: block;
+    background: $white;
+    height: 4px;
+    margin: 8px auto;
+    position: relative;
+    text-indent: -5000px;
+    min-width: 20px;
+    &:before, &:after {
+      transition: all .5s;
+      content: '';
+      display: block;
+      height: 4px;
+      background: $white;
+      position: absolute;
+      left: 0; right: 0;
+    }
+    &:before {
+      top: -8px;
+    }
+    &:after {
+      bottom: -8px;
+    }
+  }
+  &.open {
+    span {
+      background: none;
+      &:before {
+        top: 0;
+        transform: rotate(-135deg);
+      }
+      &:after {
+        bottom: 0;
+        transform: rotate(135deg);
+      }
+    }
+  }
+}
+
+
+// Footer
+.footer {
+	background: $brand-brown;
+	color: $white;
+	a {
+		color: $white;
+	}
+	.logo {
+		display: block;
+		width: 142px;
+		height: 51px;
+		margin-bottom: 10px;
+	}
+}
+.footer-main-row {
+	padding-top: 30px;
+}
+.footer-left {
+	strong {
+		display: block;
+		font-size: 30px;
+		font-family: $accent-font;
+	}
+}
+.footer-right {
+	strong {
+		display: block;
+		font-size: 18px;
+		font-family: $accent-font;
+	}
+}
+.footer-bottom-line {
+	border-top: 2px solid $brand-tan;
+	margin-top: 30px;
+	font-size: 12px;
+	padding-top: $box-margin;
+	padding-bottom: $box-margin;
+	.menu a {
+		padding: 0 $box-margin 0 0;
+	}
+	.copyright {
+		text-align: right;
+	}
+}
+
+.footer-scene {
+	position: relative;
+	height: 150px;
+	margin-top: $box-margin;
+    width: 100vw;
+	.pumpkins {
+		max-width: 150px;
+		position: absolute;
+		left: 80%;
+		bottom: -10px;
+		z-index: 4;
+	}
+	.fence {
+		height: 25px;
+		background-image: url($baseurl+'/Content/Images/scene-fence.png');
+		background-repeat: repeat-x;
+		background-position: top left;
+		background-size: 25px 25px;
+		position: absolute;
+		left: 0; right: 0;
+		bottom: 6px;
+		z-index: 3;
+	}
+	.grass {
+		position: absolute;
+		left: 0; right: 0;
+		bottom: 0;
+		z-index: 2;
+	}
+	img {
+		width: 100%;
+	}
+}
+.clouds {
+	background-image: url($baseurl+'/Content/Images/scene-cloud.png');
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-size: 255px 53px;
+	width: 255px;
+	height: 53px;
+
+	position: absolute;
+	left: 0; top: 0;
+	z-index: 5;
+
+	&.front {
+		animation: clouds-front 60s forwards infinite;
+	}
+	&.medium {
+		background-size: 190px 40px;
+		width: 190px;
+		height: 40px;
+		left: 30%; top: 50px;
+		@include transform(scaleX(-1));
+		animation: clouds-medium 90s forwards infinite;
+	}
+	&.back {
+		background-size: 100px 21px;
+		width: 100px;
+		height: 21px;
+		left: 50%; top: 85px;
+		z-index: 1;
+		animation: clouds-back 120s forwards infinite;
+	}
+}
+@keyframes clouds-front {
+    0% {
+        left: 90%;
+    }
+    9% {
+        opacity: 1;
+    }
+    10% {
+        left: 110%;
+        opacity: 0;
+    }
+    11% {
+        left: -10%;
+    }
+    12% {
+        opacity: 0;
+    }
+    13% {
+        opacity: 1;
+    }
+    100% {
+        left: 90%;
+    }
+}
+@keyframes clouds-medium {
+    0% {
+        left: 0;
+    }
+    49% {
+        opacity: 1;
+    }
+    50% {
+        left: 100%;
+        opacity: 0;
+    }
+    51% {
+        left: -10%;
+    }
+    52% {
+        opacity: 0;
+    }
+    53% {
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+    }
+}
+@keyframes clouds-back {
+    0% {
+        left: 50%;
+    }
+    59% {
+        opacity: 1;
+    }
+    60% {
+        left: 110%;
+        opacity: 0;
+    }
+    61% {
+        left: -10%;
+    }
+    62% {
+        opacity: 0;
+    }
+    63% {
+        opacity: 1;
+    }
+    100% {
+        left: 50%;
+    }
+}
+
+
+
+
+
+
+
+
+
+body.main-nav-open {
+	overflow: hidden;
+	#header-menu {
+		display: block;
+		position: fixed;
+		background: $brand-blue;//$white;
+		top: 0; bottom: 0;
+		left: 0; right: 0;
+		z-index: 100;
+		height: auto;
+		&.menu {
+			padding-top: $box-margin;
+			line-height: 40px;
+			a {
+				color: $white;
+			}
+		}
+	}
+	.footer-scene {
+		position: fixed;
+		bottom: 0;
+		left: 0; right: 0;
+		z-index: 102;
+	}
+}
+// Mobile Nav
+@media all and (max-width: 705px) {
+
+.top-bar-left {
+	.menu {
+		display: none;
+	}
+}
+
+}
+@media all and (min-width: 705px) {
+.top-bar-left {
+	.menu {
+		.home {
+			display: none;
+		}
+	}
+	.menu-toggle {
+		display: none;
+	}
+}
+
+}
+
+
+
+
+
+
+
+// Responsive
+@media all and (min-width: $breakpoint-medium) {
+// Tablet & Up
+.footer-right {
+	text-align: right;
+}
+// End Tablet & Up
+}
+
+@media all and (min-width: $breakpoint-large) {
+// Desktop & Up
+.top-bar {
+	margin-top: $box-margin;
+}
+.top-bar-hours {
+    top: -7px;
+	right: -17px;
+	background-size: 200px 154px;
+	width: 200px;
+	height: 154px;
+	padding-top: 60px;
+	strong, em {
+		font-size: 16px;
+	}
+	em {
+		font-size: 24px;
+	}
+}
+
+// End Desktop & Up
+}

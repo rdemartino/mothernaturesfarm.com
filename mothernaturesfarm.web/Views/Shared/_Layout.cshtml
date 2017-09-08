@@ -18,9 +18,6 @@
     <meta property="og:description" content="" />
     <meta property="og:image" content="/Content/Images/fbimage.png" />
 
-    @*<link rel="stylesheet" href="/Content/Styles/foundation.css">
-    <link rel="stylesheet" href="/Content/Styles/style.css">*@
-
     <!-- Custom Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Carter+One|Open+Sans:400,800" rel="stylesheet">
 
@@ -31,31 +28,31 @@
     @Scripts.Render("~/scripts/modernizr")
 </head>
 <body>
-    
+<!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
     <div class="site-container">
-
+       
         <div class="row">
             <div class="large-12 column">
-
-                <div class="title-bar" data-responsive-toggle="example-animated-menu" data-hide-for="medium">
-                    <button class="menu-icon" type="button" data-toggle></button>
-                    <div class="title-bar-title">Menu</div>
-                </div>
-
-                <div class="top-bar" id="example-animated-menu" data-animate="hinge-in-from-top spin-out">
+                <div class="top-bar">
                     <div class="top-bar-left">
-                        <ul class="menu">
-                            <li class="menu-logo"><a href="/"><img src="/Content/Images/mothernaturesfarm-logo.png" alt="Mother Nature's Farm - Gilbert AZ" /></a></li>
-                            <li>
-                                @Html.ActionLink("Our Story", "OurStory", "Home")
-                            </li>
+                        <div class="menu-logo">
+                            <a href="/"><img src="/Content/Images/mothernaturesfarm-logo.png" alt="Mother Nature's Farm - Gilbert AZ" /></a>
+                        </div>
+                        <ul class="menu" id="header-menu">
+                            <li class="home"><a href="/">Home</a></li>
+                            <li><a href="/our-story">Our Story</a></li>
                             <li><a href="/calendar">Calendar</a></li>
                             <li><a href="/parties">Groups &amp; Parties</a></li>
-                            <li><a href="/contact">Contact</a></li>
+                            <li><a href="/contactus">Contact</a></li>
                             <li><a href="/location">Directions</a></li>
                         </ul>
+                        <div class="menu-toggle">
+                            <button class="button menu-icon-ani" id="menuToggle"><span>Menu</span></button>
+                        </div>
                     </div>
-                    <div class="top-bar-right">
+                    <div class="top-bar-right ">
                         <div class="top-bar-hours">
                             <strong>October Hours</strong>
                             <em>9am to 9pm</em>
@@ -72,12 +69,10 @@
     </div>
 
     <div class="footer-scene">
-        <div class="pumpkins"><img src="/Content/Images/scene-pumpkins.png" alt="Pumpkins at Mother Nature's Farm"/>
-        </div>
+        <div class="pumpkins"><img src="/Content/Images/scene-pumpkins.png" alt="Pumpkins at Mother Nature's Farm"/></div>
         <div class="clouds front">&nbsp;</div>
         <div class="fence">&nbsp;</div>
-        <div class="grass"><img src="/Content/Images/scene-grass.png" alt="Grass on the Farm"/>
-        </div>
+        <div class="grass"><img src="/Content/Images/scene-grass.png" alt="Grass on the Farm"/></div>
         <div class="clouds medium">&nbsp;</div>
         <div class="clouds back">&nbsp;</div>
     </div>
@@ -99,7 +94,7 @@
             </div>
         </div>
         <div class="row footer-bottom-line">
-            <div class="large-8 column">
+            <div class="medium-8 column show-for-medium">
                 <ul class="menu">
                     <li><a href="/">Home</a></li>
                     <li>@Html.ActionLink("Our Story", "OurStory", "Home")</li>
@@ -109,8 +104,9 @@
                     <li><a href="/location">Directions</a></li>
                 </ul>
             </div>
-            <div class="large-4 column">
-                <div class="copyright"><a href="/">&copy; @{ DateTime.Now.ToString("yyyy");} Mother Nature's Farm</a>
+            <div class="medium-4 column">
+                <div class="copyright">
+                    <a href="/">&copy; @{ DateTime.Now.ToString("yyyy");} Mother Nature's Farm</a>
                 </div>
             </div>
 

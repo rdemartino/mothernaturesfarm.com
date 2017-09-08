@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Calendar";
+    ViewBag.PgHdrPhoto = "photo-wide-calendar.jpg";
+    ViewBag.MetaDescription = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("_PageHeader")
+
+<div class="row content-block blue medium-collapse box white-border">
+    <div class="large-4 medium-6 column sidebar sidebar-left">
+        <div class="inner">
+            <h3>Special Events</h3>
+            <p>Please join us at the farm during our special events!</p>
+
+            <p><a href="/pumpkinpatch" class="box image-bg image-link" style="background-image: url(/Content/Images/photo-halloween-1.jpg);">
+                <span class="title">Halloween</span>
+                <span class="text">Come visit "Arizona's Best" rated pumpkin patch and weigh in on the Pumpkin weigh off!</span>
+            </a></p>
+            <p><a href="/christmas" class="box image-bg image-link" style="background-image: url(/Content/Images/photo-snowday-1.jpg);">
+                <span class="title">Snow Day</span>
+                <span class="text">We haul in TONS of snow to enjoy. Bring your mittens and a snow tube and slide on down!!</span>
+            </a></p>
+        </div>
+    </div>
+  
+    <div class="large-8 medium-6 column">
+        <div class="inner">
+            <p>Click on the date / event for more details</p>
+            <div id="calendar">&nbsp;</div>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+        </div>
+    </div>
+</div>

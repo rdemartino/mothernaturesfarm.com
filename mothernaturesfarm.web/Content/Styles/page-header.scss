@@ -1,0 +1,13 @@
+.page-header {
+	margin-bottom: $box-margin;
+	.box {
+		border-top: 0;
+	}
+	h1 {
+		color: $white;
+		text-shadow: -2px 1px 0 $black;
+		text-align: center;
+		padding-top: 200px;
+	}
+	
+}

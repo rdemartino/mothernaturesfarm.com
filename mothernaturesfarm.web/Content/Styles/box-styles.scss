@@ -1,0 +1,119 @@
+.box {
+	display: block;
+	&.image-bg {
+		background-position: center center;
+		background-size: cover;
+	}
+	&.white-border {
+		border: ($box-border-size/2) solid $box-border-color;
+		background-color: $white;
+		background-color: rgba($white,.8);
+	}
+	&.blue-bg {
+		background-color: $brand-blue;
+	}
+	&.green-bg {
+		background-color: $brand-green;
+	}
+	&.orange-bg {
+		background-color: $brand-orange;
+	}
+	&.image-link {
+		padding-top: 100px;
+		span {
+			display: block;
+			background: $black;
+			background: rgba($black,.5);
+			color: $white;
+			padding: 10px;
+			line-height: 1.2em;
+		}
+		.title {
+			font-family: $accent-font;
+			font-size: 18px;
+			padding-bottom: 0;
+		}
+	}
+	img {
+		width: 100%;
+	}
+	p {
+		font-size: 14px;
+		line-height: 20px;
+	}
+}
+.image-box {
+	background-position: center center;
+	background-size: cover;
+	img {
+		width: 100%;
+	}
+	&.border {
+		border: ($box-border-size/2) solid $box-border-color;
+		background-color: $white;
+		background-color: rgba($white,.8);
+		&.blue {
+			border-color: $brand-blue;
+		}
+		&.green {
+			border-color: $brand-green;
+		}
+		&.orange {
+			border-color: $brand-orange;
+		}
+	}
+	&.content {
+		width: 100%;
+		max-width: 300px;
+		margin: 0 20px 20px;
+		&.float-left {
+			margin-left: 0;
+		}
+		&.float-right {
+			margin-right: 0;
+		}
+	}
+
+}
+.featured-item {
+	text-align: center;
+	margin-bottom: $box-margin;
+	h3 {
+		font-size: 18px;
+		line-height: 16px;
+		margin: 20px 6px 10px;
+	}
+	p {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+// Responsive
+@media all and (min-width: $breakpoint-medium) {
+// Tablet & Up
+.box {
+	&.white-border {
+		border-width: $box-border-size;
+	}
+}
+.image-box {
+	&.content {
+		&.small {
+			max-width: 200px;
+		}
+	}
+}
+
+// End Tablet & Up
+}
+
+@media all and (min-width: $breakpoint-large) {
+// Desktop & Up
+
+.featured-item {
+	p {
+	    min-height: 120px;
+	}
+}
+// End Desktop & Up
+}
