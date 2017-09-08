@@ -186,6 +186,7 @@
     <Content Include="Content\Scripts\gcal.min.js" />
     <Content Include="Content\Scripts\instafeed.min.js" />
     <Content Include="Content\Scripts\moment.min.js" />
+    <Content Include="Content\Scripts\pg-calendar.js" />
     <Content Include="Content\Scripts\what-input.js" />
     <Content Include="Content\Styles\foundation.css" />
     <Content Include="Content\Styles\style.min.css">

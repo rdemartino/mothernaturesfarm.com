@@ -4,6 +4,10 @@
     ViewBag.MetaDescription = "";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@section scripts
+{
+    @Scripts.Render("~/scripts/pgcalendar")
+}
 
 @Html.Partial("_PageHeader")
 
