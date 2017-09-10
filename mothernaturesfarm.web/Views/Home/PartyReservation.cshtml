@@ -5,7 +5,9 @@
     ViewBag.MetaDescription = "Bring your class for a fun farm experience. Trips include a pumpkin, the straw bounce, a hayride, air bounce, feeding the farm animals and Alexander's Adventure Maze.";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@section scripts {
+    @Scripts.Render("~/scripts/pgpartyres");
+}
 @Html.Partial("_PageHeader")
 
 <div class="row content-block green medium-collapse box white-border">
@@ -57,7 +59,7 @@
                             <div class="column medium-3">
                                 <label>
                                     Zip Code
-                                    @Html.TextBoxFor(m => m.City, new { placeholder = "Zip Code...", required = "required" })
+                                    @Html.TextBoxFor(m => m.PostalCode, new { placeholder = "Zip Code...", required = "required" })
                                 </label>                            
                             </div>
                         </div>
@@ -75,8 +77,8 @@
                         <div class="row subgroup">
                             <div class="column medium-6">
                                 <label>
-                                    Date
-                                    @Html.TextBoxFor(m => m.PartyDate, new { placeholder = "Date...", required = "required" })
+                                    Date                                    
+                                    @Html.TextBoxFor(m => m.PartyDate, new { placeholder = "Date...", required = "required", id="PartyDate" })
                                 </label>
                             </div>
                             <div class="column medium-6">
@@ -88,7 +90,7 @@
                         </div>
                         <label>
                             Number of Kids (10 minimum)
-                            @Html.TextBoxFor(m => m.NumberOfKids, new { placeholder = "Number of Kids (10 minimum)...", required = "required" })
+                            @Html.TextBoxFor(m => m.NumberOfKids, new { placeholder = "Number of Kids (10 minimum)...", required = "required", min="10" })
                         </label>
                         <label>
                             Number of Adults
@@ -111,7 +113,7 @@
                             @Html.TextAreaFor(m=>m.Comments, new {placeholder = "..."})
                         </label>
                     </div>
-                    <input type="submit" value="send" disabled="disabled" class="button" />
+                    <input type="submit" value="send" class="button" />
                 </div>
             }
         </div>

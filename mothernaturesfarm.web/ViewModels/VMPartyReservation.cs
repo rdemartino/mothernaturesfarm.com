@@ -9,7 +9,7 @@ namespace mothernaturesfarm.web.ViewModels
 
         private SelectList _states;
         private SelectList _partyTimes;
-
+        
         public string ParentName { get; set; }
 
         public string ParentEmail { get; set; }
@@ -39,9 +39,8 @@ namespace mothernaturesfarm.web.ViewModels
         public string ChildName { get; set; }
 
         public int? ChildAge { get; set; }
-
         
-        public DateTime PartyDate { get; set; }
+        public string PartyDate { get; set; }
 
         public SelectList PartyTimes
         {

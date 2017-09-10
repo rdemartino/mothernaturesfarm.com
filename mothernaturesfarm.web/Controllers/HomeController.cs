@@ -1,4 +1,6 @@
 ﻿using System.Web.Mvc;
+using mothernaturesfarm.web.Models;
+using mothernaturesfarm.web.Services;
 using mothernaturesfarm.web.ViewModels;
 
 namespace mothernaturesfarm.web.Controllers
@@ -35,6 +37,18 @@ namespace mothernaturesfarm.web.Controllers
         {
             return (View());
         }
+
+        [HttpPost]
+        public ActionResult ContactUs(VMContactUs vmContactUs)
+        {
+            EmailNotificationServices enf = new EmailNotificationServices();
+            SendNotificationResult sRes = enf.SendNotification(vmContactUs);
+            
+            if (sRes == SendNotificationResult.UnknownException)
+                return (View("ContactUsError"));
+
+            return (View("ContactUsSent"));
+        }
         [HttpGet]
         public ActionResult Coupons()
         {
@@ -64,6 +78,19 @@ namespace mothernaturesfarm.web.Controllers
         public ActionResult PartyReservation()
         {
             return (View("PartyReservation", new VMPartyReservation()));
+        }
+        [HttpPost]
+        public ActionResult PartyReservation(VMPartyReservation vmPartyReservation)
+        {
+            EmailNotificationServices enf = new EmailNotificationServices();
+            SendNotificationResult sRes = enf.SendNotification(vmPartyReservation);
+
+            if (sRes == SendNotificationResult.MissingRequiredData)
+                return (View("PartyReservation", new VMPartyReservation()));
+            if (sRes == SendNotificationResult.UnknownException)
+                return (View("PartyReservationError"));
+
+            return (View("PartyReservationSent"));
         }
         [HttpGet]
         public ActionResult PumpkinPatch()

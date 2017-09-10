@@ -1,4 +1,5 @@
-﻿@{
+﻿@model mothernaturesfarm.web.ViewModels.VMContactUs
+@{
     ViewBag.Title = "Contact Mother Nature's Farm";
     ViewBag.MetaDescription = "Contact Mother Nature's Farm for more information about the farm or to schedule a group trip, via phone, email or send us a message.";
     ViewBag.PgHdrPhoto = "photo-wide-1.jpg";
@@ -7,25 +8,58 @@
 
 @Html.Partial("_PageHeader")
 
-<div class="row content-block blue medium-collapse box white-border">
+<div class="row content-block green medium-collapse box white-border">
     <div class="large-8 medium-6 column">
         <div class="inner">
-            <h3>If you would like more information about the farm, please the following contact info.</h3>
-            <p>
-                Reach us via phone: Farm: <a href="tel:1-480-892-5874" class="telephone">480-892-5874</a><br>
-                Fax: 480-507-0074<br>
-                Or email us at: <a href="mailto:news@mothernaturesfarm.com?subject=Email from website">news@mothernaturesfarm.com</a><br>
-            </p>
-            <p>
-                <a href="mailto:wade@mothernaturesfarm.com?subject=Email from website">Wade</a>&nbsp;|&nbsp;
-                <a href="mailto:caroline@mothernaturesfarm.com?subject=Email from website">Caroline</a>
-            </p>
+            <p>If you would like more information about the farm, please contact us via phone, email or send us a message using the form below.</p>
+
+            <h2>Send a Message</h2>
+            
+            @using (Html.BeginForm("ContactUs", "Home"))
+            {
+                
+                <div class="form-ctr">
+                    <div class="group">
+                        <h4>Contact Information</h4>
+                        <label>
+                            Name
+                            @Html.TextBoxFor(m=>m.Name, new { placeholder = "Name...", required="required"})
+                        </label>
+                        <label>
+                            Email Address
+                            @Html.TextBoxFor(m => m.Email, new { placeholder = "Email Address...", type="email", required = "required" })
+                        </label>
+                        <label>
+                            Home Phone
+                            @Html.TextBoxFor(m => m.Phone, new { placeholder = "Phone...", required = "required" })
+                        </label>                        
+                    </div>
+
+                    <div class="group">
+                        <h4>Comments, Questions or Additional Requests</h4>
+                        <label>
+                            @Html.TextAreaFor(m=>m.Comments, new {placeholder = "..."})
+                        </label>
+                    </div>
+                    <input type="submit" value="send" class="button" />
+                </div>
+
+                
+            }
 
         </div>
     </div>
     <div class="large-4 medium-6 column sidebar sidebar-right">
         <div class="inner">
-            ?
+            <h3>Contact Information</h3>
+            <p>Call Farm: <a href="tel:1-480-892-5874" class="telephone">480-892-5874</a><br>
+                Fax: <span>480-507-0074</span></p>
+            <p>
+                Or email us at: <br>
+                <a href="mailto:news@mothernaturesfarm.com?subject=Email from website">news@mothernaturesfarm.com</a><br>
+                <a href="mailto:wade@mothernaturesfarm.com?subject=Email from website">Wade</a><br>
+                <a href="mailto:caroline@mothernaturesfarm.com?subject=Email from website">Caroline</a>
+            </p>
         </div>
     </div>
 </div>

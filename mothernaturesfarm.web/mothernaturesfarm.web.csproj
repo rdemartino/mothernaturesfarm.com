@@ -161,6 +161,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DataAccess\MNFData.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -168,12 +169,15 @@
     <Compile Include="Models\Coupon.cs" />
     <Compile Include="Models\CouponMemberUsage.cs" />
     <Compile Include="Models\Member.cs" />
+    <Compile Include="Models\SendNotificationResult.cs" />
     <Compile Include="Models\State.cs" />
     <Compile Include="Models\StaticCollections.cs" />
     <Compile Include="Models\UISelectItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\EmailNotificationServices.cs" />
     <Compile Include="ViewModels\VMBase.cs" />
     <Compile Include="ViewModels\VMPartyReservation.cs" />
+    <Compile Include="ViewModels\VMContactUs.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="android-chrome-192x192.png" />
@@ -230,13 +234,14 @@
     <Content Include="Content\Images\sitebg.jpg" />
     <Content Include="Content\Images\twimage.jpg" />
     <Content Include="Content\Scripts\app.js" />
+    <Content Include="Content\Scripts\foundation.datepicker.js" />
     <Content Include="Content\Scripts\foundation.js" />
-    <Content Include="Content\Scripts\foundation.min.js" />
     <Content Include="Content\Scripts\fullcalendar.min.js" />
     <Content Include="Content\Scripts\gcal.min.js" />
     <Content Include="Content\Scripts\instafeed.min.js" />
     <Content Include="Content\Scripts\moment.min.js" />
     <Content Include="Content\Scripts\pg-calendar.js" />
+    <Content Include="Content\Scripts\pg-partyres.js" />
     <Content Include="Content\Scripts\what-input.js" />
     <Content Include="Content\Styles\foundation.css" />
     <Content Include="Content\Styles\style.min.css">
@@ -290,6 +295,18 @@
     <Content Include="Views\Home\OurStory.cshtml" />
     <Content Include="MachineKey.config" />
     <Content Include="manifest.json" />
+    <Content Include="Content\Styles\box-styles.scss" />
+    <Content Include="Content\Styles\buttons.scss" />
+    <Content Include="Content\Styles\calendar.scss" />
+    <Content Include="Content\Styles\content-block.scss" />
+    <Content Include="Content\Styles\forms.scss" />
+    <Content Include="Content\Styles\home-header.scss" />
+    <Content Include="Content\Styles\page-header.scss" />
+    <Content Include="Content\Styles\site-frame.scss" />
+    <Content Include="Content\Styles\table.scss" />
+    <Content Include="Content\Styles\typography.scss" />
+    <Content Include="Content\Styles\_reset.scss" />
+    <Content Include="Content\Styles\_variables.scss" />
     <None Include="Properties\PublishProfiles\mothernaturesfarm - Web Deploy.pubxml" />
     <Content Include="Smtp.config" />
     <Content Include="Views\Home\Calendar.cshtml" />
@@ -306,6 +323,11 @@
     <Content Include="Views\Home\PumpkinPatch.cshtml" />
     <Content Include="Views\Home\TourReservation.cshtml" />
     <Content Include="Views\Home\Christmas.cshtml" />
+    <Content Include="Views\Home\PartyReservationSent.cshtml" />
+    <Content Include="Views\Home\PartyReservationError.cshtml" />
+    <Content Include="Views\Home\ContactUsSent.cshtml" />
+    <Content Include="Views\Shared\_SendNotificationError.cshtml" />
+    <Content Include="Views\Home\ContactUsError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
