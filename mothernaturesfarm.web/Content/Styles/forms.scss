@@ -3,15 +3,72 @@
 [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'],
 textarea {
 	border-width: 2px;
-	border-color: $main-color;
+	border-color: $brand-tan;
     box-shadow: none;
+    margin-bottom: 0;
     &:focus {
 		border-width: 2px;
 		border-color: $main-color;
 	    box-shadow: none;
-
     }
 }
-.input-group-button .button {
-	//background: $brand-tan;
+[type='radio'], [type='checkbox'] {
+	margin-bottom: 0;
 }
+select {
+	border-width: 2px;
+	border-color: $brand-tan;
+    box-shadow: none;
+    margin-bottom: 0;
+    padding-top: 0;
+
+    padding-bottom: 0;
+    &:focus {
+		border-width: 2px;
+		border-color: $main-color;
+	    box-shadow: none;
+    }
+}
+.input-group-field {
+	border-color: $main-color;
+}
+.subgroup {
+	margin-right: -10px !important;
+	margin-left: -10px !important;
+}
+.form-ctr {
+	.group {
+		margin-bottom: 30px;
+	}
+	legend {
+		font-size: 14px;
+		line-height: 1.3em;
+		display: none;
+	}
+	label {
+		font-size: 14px;
+		line-height: 1.3em;
+		margin-bottom: 10px;
+	}
+	h1, h2, h3, h4 {
+		margin-top: 6px;
+		margin-bottom: 6px;
+	}
+	fieldset {
+		border: 2px solid $brand-tan;
+		background: $page-background;
+		padding: 10px 10px 0;
+		margin-bottom: 10px;
+	}
+	textarea {
+		min-height: 150px;
+	}
+}
+
+
+
+
+
+
+
+    

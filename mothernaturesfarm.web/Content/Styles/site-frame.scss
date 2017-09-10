@@ -65,20 +65,28 @@ body {
   }
 }
 .top-bar-left {
-	.menu, .menu-logo {
+	.main-menu, .menu-logo {
 		height: $nav-height;
 		line-height: $nav-height;
 		a, button {
 			display: inline-block;
 			font-family: $accent-font;
-		    padding: 0.7rem 8px;
+		    padding: 0.7rem 10px;
 			&:hover {
 				color: $link-hover;
 			}
 		}
 	}
-	.menu {
-		//display: none;
+	.submenu {
+		z-index: 1000;
+		border: none;
+		transform: translate(0, -20px);
+		a {
+			font-family: $font-family;
+			font-size: 14px;
+			line-height: 30px;
+			padding: 0 10px;
+		}
 	}
 	.menu-logo {
 		width: 135px;
@@ -90,6 +98,13 @@ body {
 		img {
 			width: 135px;
 
+		}
+	}
+	.social {
+		a {
+			top: -7px;
+		    position: relative;
+		    margin-left: 20px;
 		}
 	}
 }
@@ -138,7 +153,18 @@ body {
     }
   }
 }
-
+.facebook-icon {
+	background-image: url($baseurl+'/Content/Images/facebook-icon.png');
+	background-size: 60px 60px;
+	background-position: 0 -30px;
+	width: 30px;
+	height: 30px;
+	display: block;
+	text-indent: -5000px;
+	&:hover {
+		background-position: 0 0;
+	}
+}
 
 // Footer
 .footer {
@@ -176,13 +202,18 @@ body {
 	margin-top: 30px;
 	font-size: 12px;
 	padding-top: $box-margin;
+	padding-bottom: ($box-margin/2);
+	ul {
+		margin: 0;
+		li {
+			list-style-type: none;
+			margin: 0;
+		}
+	}
+}
+.copyright {
 	padding-bottom: $box-margin;
-	.menu a {
-		padding: 0 $box-margin 0 0;
-	}
-	.copyright {
-		text-align: right;
-	}
+	font-size: 12px;
 }
 
 .footer-scene {
@@ -216,6 +247,12 @@ body {
 	}
 	img {
 		width: 100%;
+	}
+	.clouds-ctr {
+		overflow: hidden;
+		position: absolute;
+		top: 0; bottom: 0;
+		left: 0; right: 0;
 	}
 }
 .clouds {
@@ -333,14 +370,23 @@ body {
 
 body.main-nav-open {
 	overflow: hidden;
-	#header-menu {
+	&:before {
+		content: '';
 		display: block;
 		position: fixed;
-		background: $brand-blue;//$white;
 		top: 0; bottom: 0;
 		left: 0; right: 0;
 		z-index: 100;
+		background: $brand-blue;//$white;
+	}
+	#header-menu {
+		display: block;
+		position: fixed;
+		top: 0; bottom: 0;
+		left: 0; right: 0;
+		z-index: 102;
 		height: auto;
+		background: transparent;
 		&.menu {
 			padding-top: $box-margin;
 			line-height: 40px;
@@ -353,7 +399,31 @@ body.main-nav-open {
 		position: fixed;
 		bottom: 0;
 		left: 0; right: 0;
-		z-index: 102;
+		z-index: 101;
+	}
+	.more-link {
+		display: none;
+	}
+	.submenu {
+		display: block;
+		background: none;
+		transform: none;
+		li {
+			width: 50%;
+			float: left;
+		}
+	}
+	.social {
+		position: fixed;
+		left: 10px;
+		bottom: 24px;
+		a {
+		    margin-left: 0;
+		}
+	}
+	.facebook-icon {
+	    text-indent: 40px;
+	    line-height: 30px;
 	}
 }
 // Mobile Nav

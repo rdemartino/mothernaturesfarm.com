@@ -65,12 +65,12 @@
 	&.content {
 		width: 100%;
 		max-width: 300px;
-		margin: 0 20px 20px;
+		margin-bottom: 20px;
 		&.float-left {
-			margin-left: 0;
+			margin-right: 20px;
 		}
 		&.float-right {
-			margin-right: 0;
+			margin-left: 20px;
 		}
 	}
 
@@ -103,17 +103,25 @@
 		}
 	}
 }
+.featured-item {
+	h3 {
+	    min-height: 32px;
+	}
+	p {
+	    min-height: 140px;
+	}
+}
 
 // End Tablet & Up
 }
 
 @media all and (min-width: $breakpoint-large) {
 // Desktop & Up
-
 .featured-item {
 	p {
 	    min-height: 120px;
 	}
 }
+
 // End Desktop & Up
 }

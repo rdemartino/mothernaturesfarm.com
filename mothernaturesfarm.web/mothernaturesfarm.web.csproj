@@ -50,6 +50,23 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\Dependencies\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\Dependencies\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\Dependencies\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -143,12 +160,32 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DataAccess\MNFData.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="MNFConfiguration.cs" />
+    <Compile Include="Models\Coupon.cs" />
+    <Compile Include="Models\CouponMemberUsage.cs" />
+    <Compile Include="Models\Member.cs" />
+    <Compile Include="Models\State.cs" />
+    <Compile Include="Models\StaticCollections.cs" />
+    <Compile Include="Models\UISelectItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\VMBase.cs" />
+    <Compile Include="ViewModels\VMPartyReservation.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="android-chrome-192x192.png" />
+    <Content Include="android-chrome-384x384.png" />
+    <Content Include="apple-touch-icon.png" />
+    <Content Include="Content\Images\facebook-icon.png" />
+    <Content Include="Content\Images\family-alexander.jpg" />
+    <Content Include="Content\Images\family-brooke.jpg" />
+    <Content Include="Content\Images\family-maneau.jpg" />
+    <Content Include="Content\Images\family-wade_caroline.jpg" />
+    <Content Include="Content\Images\fbimage.jpg" />
+    <Content Include="Content\Images\futurefarmdesign.gif" />
     <Content Include="Content\Images\hours-sign.png" />
     <Content Include="Content\Images\img.png" />
     <Content Include="Content\Images\logo-white-200-outline.jpg" />
@@ -161,17 +198,29 @@
     <Content Include="Content\Images\photo-family-3.jpg" />
     <Content Include="Content\Images\photo-family-4.jpg" />
     <Content Include="Content\Images\photo-halloween-1.jpg" />
+    <Content Include="Content\Images\photo-market-christmas.jpg" />
     <Content Include="Content\Images\photo-market-october.jpg" />
     <Content Include="Content\Images\photo-party-1.jpg" />
     <Content Include="Content\Images\photo-party-2.jpg" />
     <Content Include="Content\Images\photo-party-3.jpg" />
     <Content Include="Content\Images\photo-pumpkinpatch-1.jpg" />
+    <Content Include="Content\Images\photo-pumpkinpatch-2.jpg" />
+    <Content Include="Content\Images\photo-pumpkinpatch-3.jpg" />
     <Content Include="Content\Images\photo-snowday-1.jpg" />
+    <Content Include="Content\Images\photo-snowday-2.jpg" />
     <Content Include="Content\Images\photo-wade-1.jpg" />
     <Content Include="Content\Images\photo-wide-1.jpg" />
+    <Content Include="Content\Images\photo-wide-activities.jpg" />
+    <Content Include="Content\Images\photo-wide-animal-1.jpg" />
+    <Content Include="Content\Images\photo-wide-animal-2.jpg" />
+    <Content Include="Content\Images\photo-wide-animals.jpg" />
     <Content Include="Content\Images\photo-wide-calendar.jpg" />
+    <Content Include="Content\Images\photo-wide-christmas.jpg" />
+    <Content Include="Content\Images\photo-wide-futureplans.jpg" />
+    <Content Include="Content\Images\photo-wide-location.jpg" />
     <Content Include="Content\Images\photo-wide-parties.jpg" />
     <Content Include="Content\Images\photo-wide-pumpkinpatch.jpg" />
+    <Content Include="Content\Images\photo-wide-snowday.jpg" />
     <Content Include="Content\Images\photo-wide-story.jpg" />
     <Content Include="Content\Images\photo-wide-truck.jpg" />
     <Content Include="Content\Images\scene-cloud.png" />
@@ -179,6 +228,7 @@
     <Content Include="Content\Images\scene-grass.png" />
     <Content Include="Content\Images\scene-pumpkins.png" />
     <Content Include="Content\Images\sitebg.jpg" />
+    <Content Include="Content\Images\twimage.jpg" />
     <Content Include="Content\Scripts\app.js" />
     <Content Include="Content\Scripts\foundation.js" />
     <Content Include="Content\Scripts\foundation.min.js" />
@@ -192,6 +242,11 @@
     <Content Include="Content\Styles\style.min.css">
       <DependentUpon>style.css</DependentUpon>
     </Content>
+    <Content Include="favicon-144.png" />
+    <Content Include="favicon-152.png" />
+    <Content Include="favicon-16x16.png" />
+    <Content Include="favicon-32x32.png" />
+    <Content Include="favicon-500.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Styles\style.css" />
@@ -207,6 +262,7 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <Content Include="Content\Images\future.pdf" />
     <None Include="Content\Scripts\jquery-1.11.0.intellisense.js" />
     <Content Include="Content\Scripts\jquery-1.11.0.js" />
     <Content Include="Content\Scripts\jquery-1.11.0.min.js" />
@@ -219,6 +275,7 @@
     <Content Include="Content\Scripts\modernizr-2.6.2.js" />
     <Content Include="Content\Scripts\respond.js" />
     <Content Include="Content\Scripts\respond.min.js" />
+    <Content Include="mstile-150x150.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -232,6 +289,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\OurStory.cshtml" />
     <Content Include="MachineKey.config" />
+    <Content Include="manifest.json" />
     <None Include="Properties\PublishProfiles\mothernaturesfarm - Web Deploy.pubxml" />
     <Content Include="Smtp.config" />
     <Content Include="Views\Home\Calendar.cshtml" />
@@ -240,11 +298,18 @@
     <Content Include="Views\Home\Location.cshtml" />
     <Content Include="Views\Shared\_PageHeader.cshtml" />
     <Content Include="Views\Shared\_NewsletterSignup.cshtml" />
+    <Content Include="Views\Home\Activities.cshtml" />
+    <Content Include="Views\Home\Animals.cshtml" />
+    <Content Include="Views\Home\Coupons.cshtml" />
+    <Content Include="Views\Home\FuturePlans.cshtml" />
+    <Content Include="Views\Home\PartyReservation.cshtml" />
+    <Content Include="Views\Home\PumpkinPatch.cshtml" />
+    <Content Include="Views\Home\TourReservation.cshtml" />
+    <Content Include="Views\Home\Christmas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Styles\foundation\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

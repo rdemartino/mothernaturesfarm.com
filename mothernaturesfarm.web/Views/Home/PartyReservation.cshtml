@@ -1,0 +1,135 @@
+﻿@model mothernaturesfarm.web.ViewModels.VMPartyReservation
+@{
+    ViewBag.Title = "Party Reservations";
+    ViewBag.PgHdrPhoto = "photo-wide-animal-1.jpg";
+    ViewBag.MetaDescription = "Bring your class for a fun farm experience. Trips include a pumpkin, the straw bounce, a hayride, air bounce, feeding the farm animals and Alexander's Adventure Maze.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("_PageHeader")
+
+<div class="row content-block green medium-collapse box white-border">
+    <div class="large-8 medium-6 column">
+        <div class="inner">
+            <h2>Reservation Form</h2>
+            <p>Please complete and submit the following form to schedule your upcoming birthday party. Please note that birthday party reservations require a minimum of 10 children.</p>
+            
+            @using (Html.BeginForm("PartyReservation", "Home"))
+            {
+                <div class="form-ctr">
+                    <div class="group">
+                        <h4>Contact Information</h4>
+                        <label>
+                            Parent/Guardian Name
+                            @Html.TextBoxFor(m=>m.ParentName, new { placeholder = "Parent/Guardian Name...", required="required"})
+                        </label>
+                        <label>
+                            Email Address
+                            @Html.TextBoxFor(m => m.ParentEmail, new { placeholder = "Email Address...", type="email", required = "required" })
+                        </label>
+                        <label>
+                            Home Phone
+                            @Html.TextBoxFor(m => m.HomePhone, new { placeholder = "Home Phone...", required = "required" })
+                        </label>
+                        <label>
+                            Cell Phone
+                            @Html.TextBoxFor(m => m.CellPhone, new { placeholder = "Cell Phone...", required = "required" })
+                        </label>                    
+                        <div class="row subgroup">
+                            <div class="column medium-12">
+                                <label>
+                                    Street Address
+                                    @Html.TextBoxFor(m => m.StreetAddress, new { placeholder = "Street Address...", required = "required" })
+                                </label>                                                
+                            </div>
+                            <div class="column medium-6">
+                                <label>
+                                    City
+                                    @Html.TextBoxFor(m => m.City, new { placeholder = "City...", required = "required" })
+                                </label>                                                
+                            </div>
+                            <div class="column medium-3">
+                                <label>
+                                    State
+                                    @Html.DropDownListFor(m=>m.SelectedState, Model.States)
+                                </label>                                                
+                            </div>
+                            <div class="column medium-3">
+                                <label>
+                                    Zip Code
+                                    @Html.TextBoxFor(m => m.City, new { placeholder = "Zip Code...", required = "required" })
+                                </label>                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <h4>Party Information</h4>
+                        <label>
+                            Child's Name
+                            @Html.TextBoxFor(m => m.ChildName, new { placeholder = "Child's Name...", required = "required" })
+                        </label>                      
+                        <label>
+                            Child's Age
+                            @Html.TextBoxFor(m => m.ChildAge, new { placeholder = "Child's Age...", required = "required" })
+                        </label>                    
+                        <div class="row subgroup">
+                            <div class="column medium-6">
+                                <label>
+                                    Date
+                                    @Html.TextBoxFor(m => m.PartyDate, new { placeholder = "Date...", required = "required" })
+                                </label>
+                            </div>
+                            <div class="column medium-6">
+                                <label>
+                                    Time
+                                    @Html.DropDownListFor(m => m.SelectedPartyTime, Model.PartyTimes)
+                                </label>
+                            </div>
+                        </div>
+                        <label>
+                            Number of Kids (10 minimum)
+                            @Html.TextBoxFor(m => m.NumberOfKids, new { placeholder = "Number of Kids (10 minimum)...", required = "required" })
+                        </label>
+                        <label>
+                            Number of Adults
+                            @Html.TextBoxFor(m => m.NumberOfAdults, new { placeholder = "Number of Adults...", required = "required" })
+                        </label>
+                        <label style="margin-bottom: 0;">Add Private Party Area</label>
+                    
+                        <fieldset>
+                            <legend>Add Private Area</legend>
+                            <label for="option1">
+                                @Html.CheckBoxFor(m=>m.AddPrivateArea, new {id="option1"})
+                                Private Party Area (+$100)                            
+                            </label>
+                        </fieldset>
+
+                    </div>
+                    <div class="group">
+                        <h4>Comments, Questions or Additional Requests</h4>
+                        <label>
+                            @Html.TextAreaFor(m=>m.Comments, new {placeholder = "..."})
+                        </label>
+                    </div>
+                    <input type="submit" value="send" disabled="disabled" class="button" />
+                </div>
+            }
+        </div>
+    </div>
+    <div class="large-4 medium-6 column sidebar sidebar-right">
+        <div class="inner">
+            <h3>Please Note</h3>
+            <p>10 child minimum</p>
+            <p><strong>Private Area</strong><br>
+                additional $100</p>
+            <p>Accept Cash, VISA, Mastercard & debit cards.</p>
+
+            <br>
+            <h3>Questions</h3>
+            <p>Call<br>
+                <a href="tel:1-480-892-5874" class="telephone">480-892-5874</a><br>
+                OR<br>
+                <a href="/contactus" class="button expanded">Send A Message</a></p>
+        </div>
+    </div>
+</div>

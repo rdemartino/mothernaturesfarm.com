@@ -1,35 +1,36 @@
 ﻿@{
-    ViewBag.Title = "Directions to Mother Nature's Farm";
-    ViewBag.MetaDescription = "";
-    ViewBag.PgHdrPhoto = "photo-wide-1.jpg";
+    ViewBag.Title = "Location, Directions & Hours";
+    ViewBag.MetaDescription = "Our farm is located off Baseline and Stapeley roads in Gilbert, Arizona. Get directions and view seasonal hours for the farm.";
+    ViewBag.PgHdrPhoto = "photo-wide-location.jpg";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @Html.Partial("_PageHeader")
 
-<div class="row content-block blue medium-collapse box white-border">
+<div class="row content-block green medium-collapse box white-border">
     <div class="large-8 medium-6 column">
         <div class="inner">
             <h2>Where are we?</h2>
-            <h3>Please use the map below to see where we are located and get directions.</h3>
-            <p>
-                Reach us via phone: Farm: <a href="tel:1-480-892-5874" class="telephone">480-892-5874</a><br>
-                Fax: 480-507-0074<br>
-                Or email us at: <a href="mailto:news@mothernaturesfarm.com?subject=Email from website">news@mothernaturesfarm.com</a><br>
-                Or email us at: <a href="mailto:news@mothernaturesfarm.com?subject=Email from website">news@mothernaturesfarm.com</a><br>
-            </p>
-            <p>
-                <a href="mailto:wade@mothernaturesfarm.com?subject=Email from website">Wade</a>&nbsp;|&nbsp;
-                <a href="mailto:caroline@mothernaturesfarm.com?subject=Email from website">Caroline</a>
-            </p>
-            <h3>Farm Hours</h3>
-            <p>Mother Nature's Farm is open September thru December, but the hours vary depending on the season.<br>Please check our <a href="contactus">calendar of events</a> for current farm hours.</p>
-
+            <h4>Please use the map below to see where we are located and get directions.</h4>
+            <iframe width="100%" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="border:solid 1px black;" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=1663+E.+Baseline+RD.,+Gilbert,+AZ+85233-1542&amp;sll=37.0625,-95.677068&amp;sspn=54.489258,113.818359&amp;ie=UTF8&amp;hq=&amp;hnear=1663+E+Baseline+Rd,+Gilbert,+Maricopa,+Arizona+85233&amp;ll=33.376412,-111.795502&amp;spn=0.034404,0.054932&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br /><a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=1663+E.+Baseline+RD.,+Gilbert,+AZ+85233-1542&amp;sll=37.0625,-95.677068&amp;sspn=54.489258,113.818359&amp;ie=UTF8&amp;hq=&amp;hnear=1663+E+Baseline+Rd,+Gilbert,+Maricopa,+Arizona+85233&amp;ll=33.376412,-111.795502&amp;spn=0.034404,0.054932&amp;z=14&amp;iwloc=A" target="_blank" style="font-size:14px;text-align:left;">View Larger Map</a>
         </div>
     </div>
     <div class="large-4 medium-6 column sidebar sidebar-right">
         <div class="inner">
-            ?
+            <h3>Mother Nature’s Farm</h3>
+            <p>1663 E. Baseline Road<br />
+                Gilbert, AZ 85233-1542<br />
+                Farm: 480-892-5874<br />
+                Fax: 480-507-0074<br />
+                <a href="mailto:news@mothernaturesfarm.com">news@mothernaturesfarm.com</a></p>
+
+            <p>Call<br>
+                <a href="tel:1-480-892-5874" class="telephone">480-892-5874</a><br>
+                OR<br>
+                <a href="/contactus" class="button expanded">Send A Message</a></p>
+
+            <h3>Farm Hours</h3>
+            <p>Mother Nature's Farm is open September thru December, but the hours vary depending on the season.<br>Please check our <a href="/calendar">calendar of events</a> for current farm hours.</p>
         </div>
     </div>
 </div>
