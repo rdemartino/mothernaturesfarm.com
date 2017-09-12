@@ -1,4 +1,5 @@
-﻿@{
+﻿@model mothernaturesfarm.web.ViewModels.VMCoupon
+@{
     ViewBag.Title = "Coupons";
     ViewBag.PgHdrPhoto = "photo-wide-1.jpg";
     ViewBag.MetaDescription = "";
@@ -10,14 +11,84 @@
 <div class="row content-block blue medium-collapse box white-border">
     <div class="large-8 medium-6 column">
         <div class="inner">
-            <h2>title</h2>
-            <p>content</p>
+            <h2>Farm Coupon</h2>
+            <p>Please complete the following form to receive a discount on your next visit to the farm!</p>
+
+            @using (Html.BeginForm("Coupons", "Home", FormMethod.Post))
+            {
+                <div class="form-ctr">
+                    <div class="group">
+                        <h4>Contact Information</h4>
+                        <label>
+                            First Name
+                            @Html.TextBoxFor(m => m.FirstName, new { placeholder = "First Name...", required = "required" })
+                        </label>
+                        <label>
+                            First Name
+                            @Html.TextBoxFor(m => m.LastName, new { placeholder = "First Name...", required = "required" })
+                        </label>
+                        <label>
+                            Email Address
+                            @Html.TextBoxFor(m => m.Email, new { placeholder = "Email Address...", type = "email", required = "required" })
+                        </label>
+                        <div class="row subgroup">
+                            <div class="column medium-12">
+                                <label>
+                                    Street Address
+                                    @Html.TextBoxFor(m => m.StreetAddress, new { placeholder = "Street Address...", required = "required" })
+                                </label>
+                            </div>
+                            <div class="column medium-6">
+                                <label>
+                                    City
+                                    @Html.TextBoxFor(m => m.City, new { placeholder = "City...", required = "required" })
+                                </label>
+                            </div>
+                            <div class="column medium-3">
+                                <label>
+                                    State
+                                    @Html.DropDownListFor(m => m.SelectedState, Model.States)
+                                </label>
+                            </div>
+                            <div class="column medium-3">
+                                <label>
+                                    Zip Code
+                                    @Html.TextBoxFor(m => m.PostalCode, new { placeholder = "Zip Code...", required = "required" })
+                                </label>
+                            </div>
+                        </div>
+                        <label>
+                            How did you hear about us?
+                            @Html.TextBoxFor(m => m.RecommendedBy, new { placeholder = "Referred by...", required = "required" })
+                        </label>
+                        <div class="group">
+                            <fieldset>
+                                <legend>Package</legend>
+                                <p>
+                                    The Mother Nature's Farm newsletter contains the coupons you can get here as well as other special offers. We DO NOT send spam or
+                                    give out your contact information to 3rd parties.
+                                </p>
+                                <label for="nltrYes">
+                                    @Html.RadioButtonFor(m => m.AddToNewsletter, true, new {id = "nltrYes", @checked="checked"})
+                                    YES Please, and I want the coupon
+                                </label>
+                                <label for="ntlrNo">
+                                    @Html.RadioButtonFor(m => m.AddToNewsletter, true, new { id = "nltrNo" })
+                                    NO Thanks, just give me the coupon
+                                </label>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <input type="submit" value="send" class="button" />
+                </div>
+            }
+
         </div>
     </div>
     <div class="large-4 medium-6 column sidebar sidebar-right">
         <div class="inner">
-            <h3>title</h3>
-            <p>content</p>
+            <h3>Coupons</h3>
+            <p></p>
         </div>
     </div>
 </div>

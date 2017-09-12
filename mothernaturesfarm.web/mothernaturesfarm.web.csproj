@@ -159,6 +159,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CouponController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DataAccess\MNFData.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
@@ -168,21 +169,27 @@
     <Compile Include="MNFConfiguration.cs" />
     <Compile Include="Models\Coupon.cs" />
     <Compile Include="Models\CouponMemberUsage.cs" />
+    <Compile Include="Models\CouponRegistrationResult.cs" />
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\SendNotificationResult.cs" />
     <Compile Include="Models\State.cs" />
     <Compile Include="Models\StaticCollections.cs" />
     <Compile Include="Models\UISelectItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CouponService.cs" />
     <Compile Include="Services\EmailNotificationServices.cs" />
+    <Compile Include="Services\SessionService.cs" />
     <Compile Include="ViewModels\VMBase.cs" />
+    <Compile Include="ViewModels\VMCoupon.cs" />
     <Compile Include="ViewModels\VMPartyReservation.cs" />
     <Compile Include="ViewModels\VMContactUs.cs" />
+    <Compile Include="ViewModels\VMTourReservation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="android-chrome-192x192.png" />
     <Content Include="android-chrome-384x384.png" />
     <Content Include="apple-touch-icon.png" />
+    <Content Include="Content\Images\coupon.jpg" />
     <Content Include="Content\Images\facebook-icon.png" />
     <Content Include="Content\Images\family-alexander.jpg" />
     <Content Include="Content\Images\family-brooke.jpg" />
@@ -241,7 +248,9 @@
     <Content Include="Content\Scripts\instafeed.min.js" />
     <Content Include="Content\Scripts\moment.min.js" />
     <Content Include="Content\Scripts\pg-calendar.js" />
+    <Content Include="Content\Scripts\pg-coupons.js" />
     <Content Include="Content\Scripts\pg-partyres.js" />
+    <Content Include="Content\Scripts\pg-tourres.js" />
     <Content Include="Content\Scripts\what-input.js" />
     <Content Include="Content\Styles\foundation.css" />
     <Content Include="Content\Styles\style.min.css">
@@ -328,6 +337,11 @@
     <Content Include="Views\Home\ContactUsSent.cshtml" />
     <Content Include="Views\Shared\_SendNotificationError.cshtml" />
     <Content Include="Views\Home\ContactUsError.cshtml" />
+    <Content Include="Views\Home\TourReservationSent.cshtml" />
+    <Content Include="Views\Home\TourReservationError.cshtml" />
+    <Content Include="Views\Home\CouponsDisabled.cshtml" />
+    <Content Include="Views\Home\CouponsRegistered.cshtml" />
+    <Content Include="Views\Home\CouponsError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

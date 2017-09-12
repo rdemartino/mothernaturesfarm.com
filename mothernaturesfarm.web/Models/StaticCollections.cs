@@ -66,5 +66,34 @@ namespace mothernaturesfarm.web.Models
             new UISelectItem() {Name="7:00 PM - 9:00 PM", Value = "7:00 PM - 9:00 PM"}
         };
 
+        public static IEnumerable<UISelectItem> TourTimes = new List<UISelectItem>
+        {
+            new UISelectItem() { Name="9:00AM", Value="9:00AM"},
+            new UISelectItem() { Name="9:15AM", Value="9:15AM"},
+            new UISelectItem() { Name="9:30AM", Value="9:30AM"},
+            new UISelectItem() { Name="9:45AM", Value="9:45AM"},
+            new UISelectItem() { Name="10:00AM", Value="10:00AM"},
+            new UISelectItem() { Name="10:15AM", Value="10:15AM"},
+            new UISelectItem() { Name="10:30AM", Value="10:30AM"},
+            new UISelectItem() { Name="10:45AM", Value="10:45AM"},
+            new UISelectItem() { Name="11:00AM", Value="11:00AM"},
+            new UISelectItem() { Name="11:15AM", Value="11:15AM"},
+            new UISelectItem() { Name="11:30AM", Value="11:30AM"},
+            new UISelectItem() { Name="11:45AM", Value="11:45AM"},
+            new UISelectItem() { Name="12:00PM", Value="12:00PM"},
+            new UISelectItem() { Name="12:15PM", Value="12:15PM"},
+            new UISelectItem() { Name="12:30PM", Value="12:30PM"},
+            new UISelectItem() { Name="12:45PM", Value="12:45PM"},
+            new UISelectItem() { Name="1:00PM", Value="1:00PM"},
+            new UISelectItem() { Name="1:15PM", Value="1:15PM"},
+            new UISelectItem() { Name="1:30PM", Value="1:30PM"},
+            new UISelectItem() { Name="1:45PM", Value="1:45PM"},
+            new UISelectItem() { Name="2:00PM", Value="2:00PM"},
+            new UISelectItem() { Name="2:15PM", Value="2:15PM"},
+            new UISelectItem() { Name="2:30PM", Value="2:30PM"},
+            new UISelectItem() { Name="2:45PM", Value="2:45PM"},
+            new UISelectItem() { Name="3:00PM", Value="3:00PM"}
+        };
+
     }
 }

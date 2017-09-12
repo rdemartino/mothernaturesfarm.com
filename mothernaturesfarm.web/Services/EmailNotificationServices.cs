@@ -31,7 +31,38 @@ namespace mothernaturesfarm.web.Services
                                                               $"{Environment.NewLine}{{2}}" +
                                                               $"{Environment.NewLine}{{3}}";
 
-        
+        private static readonly string TOURRESSBJFMTSTR = "School Tour Request";
+        private static readonly string TOURRESBODYFRMTSTR = "SCHOOL TOUR REQUEST: " +
+                                                  $"{Environment.NewLine}School Name: {{0}}" +
+                                                  $"{Environment.NewLine}{{1}}" +
+                                                  $"{Environment.NewLine}School Phone: {{2}}" +
+                                                  $"{Environment.NewLine}School Fax: {{3}}" +
+                                                  $"{Environment.NewLine}" +
+                                                  $"{Environment.NewLine}TEACHER INFO:" +
+                                                  $"{Environment.NewLine}Name: {{4}}" +
+                                                  $"{Environment.NewLine}Aid: {{5}}" +
+                                                  $"{Environment.NewLine}Email: {{6}}" +
+                                                  $"{Environment.NewLine}Celsl Phone: {{7}}" +
+                                                  $"{Environment.NewLine}" +
+                                                  $"{Environment.NewLine}TOUR INFO" +
+                                                  $"{Environment.NewLine}Tour DateTime 1: {{8}}" +
+                                                  $"{Environment.NewLine}Tour DateTime 2: {{9}}" +
+                                                  $"{Environment.NewLine}Tour DateTime 3: {{10}}" +
+                                                  $"{Environment.NewLine}Number of Kids: {{11}}" +
+                                                  $"{Environment.NewLine}Sticker Option: {{12}}" +
+                                                  $"{Environment.NewLine}Number of Adults: {{13}}";
+
+        private static readonly string COUPONSBJFRMTSTR = "Coupon Request";
+        private static readonly string COUPONBODYFRMTSTR = "A Coupon was requested from: Email: {{0}}" +
+                                                           $"{Environment.NewLine}Name: {{1}}" +
+                                                           $"{Environment.NewLine}Address: {{2}}" +
+                                                           $"{Environment.NewLine}Address2: {{3}}" +
+                                                           $"{Environment.NewLine}City: {{4}}" +
+                                                           $"{Environment.NewLine}State: {{5}}" +
+                                                           $"{Environment.NewLine}PostalCode: {{6}}" +
+                                                           $"{Environment.NewLine}Heard About From: {{7}} " +
+                                                           $"{Environment.NewLine}Wants Newsletter: {{8}}";
+
 
         public SendNotificationResult SendNotification(VMContactUs vmContactUs)
         {
@@ -56,7 +87,6 @@ namespace mothernaturesfarm.web.Services
 
         public SendNotificationResult SendNotification(VMPartyReservation vmPartyRes)
         {
-
             if (!ReservationIsValid(vmPartyRes))
                 return(SendNotificationResult.MissingRequiredData);
 
@@ -86,13 +116,86 @@ namespace mothernaturesfarm.web.Services
             }            
         }
 
+        public SendNotificationResult SendNotification(VMTourReservation vmTourRes)
+        {
+            if (!ReservationIsValid(vmTourRes))
+                return (SendNotificationResult.MissingRequiredData);
+
+            string body = string.Format(TOURRESBODYFRMTSTR, vmTourRes.SchoolName.Trim(),
+                $"{vmTourRes.SchoolAddress.Trim()}{Environment.NewLine}{vmTourRes.City.Trim()}, {vmTourRes.SelectedState} {vmTourRes.PostalCode}",
+                vmTourRes.SchoolPhone.Trim(),
+                vmTourRes.SchoolFax.Trim(),
+                vmTourRes.TeacherName.Trim(),
+                vmTourRes.TeacherAide.Trim(),
+                vmTourRes.TeacherEmail.Trim(),
+                vmTourRes.TeacherCellPhone.Trim(),
+                $"{vmTourRes.TourDate1.Trim()} {vmTourRes.SelectedTourTime1}",
+                $"{vmTourRes.TourDate2.Trim()} {vmTourRes.SelectedTourTime2}",
+                $"{vmTourRes.TourDate3.Trim()} {vmTourRes.SelectedTourTime3}",
+                vmTourRes.NumberOfKids,
+                vmTourRes.IncludePackage,
+                vmTourRes.NumberOfAdults);
+
+            try
+            {
+                SendNotification(
+                    MNFConfiguration.TourReservationSender,
+                    MNFConfiguration.TourReservationRecipient,
+                    TOURRESSBJFMTSTR,
+                    body);
+                return (SendNotificationResult.Success);
+            }
+            catch (Exception ex)
+            {
+                return (SendNotificationResult.UnknownException);
+            }
+        }
+
+        public SendNotificationResult SendNotification(VMCoupon vmCoupon)
+        {
+            string body = string.Format(COUPONBODYFRMTSTR, 
+                vmCoupon.Email.Trim(), 
+                vmCoupon.StreetAddress.Trim(), 
+                string.Empty,
+                vmCoupon.City.Trim(), 
+                vmCoupon.SelectedState, 
+                vmCoupon.PostalCode.Trim(), 
+                vmCoupon.RecommendedBy.Trim(), 
+                vmCoupon.AddToNewsletter ? "Yes" : "No");
+
+            try
+            {
+                SendNotification(
+                    MNFConfiguration.CouponSender,
+                    MNFConfiguration.CouponRecipient,
+                    COUPONSBJFRMTSTR,
+                    body);
+                return (SendNotificationResult.Success);
+            }
+            catch (Exception ex)
+            {
+                return (SendNotificationResult.UnknownException);
+            }
+
+        }
+
         private bool ReservationIsValid(VMPartyReservation vmRes)
         {
             return !(string.IsNullOrWhiteSpace(vmRes.ChildName) || string.IsNullOrWhiteSpace(vmRes.ParentName) ||
                     string.IsNullOrWhiteSpace(vmRes.ParentEmail) || string.IsNullOrWhiteSpace(vmRes.HomePhone) ||
                     string.IsNullOrWhiteSpace(vmRes.CellPhone) || string.IsNullOrWhiteSpace(vmRes.City) ||
                     string.IsNullOrWhiteSpace(vmRes.PostalCode) || string.IsNullOrWhiteSpace(vmRes.PartyDate) ||
-                    string.IsNullOrWhiteSpace(vmRes.SelectedPartyTime) || vmRes.NumberOfKids < 10);
+                    string.IsNullOrWhiteSpace(vmRes.SelectedPartyTime) || vmRes.NumberOfKids < MNFConfiguration.PartyReservationMinKids);
+        }
+
+        private bool ReservationIsValid(VMTourReservation vmRes)
+        {
+            return !(string.IsNullOrWhiteSpace(vmRes.SchoolName) || string.IsNullOrWhiteSpace(vmRes.SchoolAddress) ||
+                     string.IsNullOrWhiteSpace(vmRes.City) || string.IsNullOrWhiteSpace(vmRes.PostalCode) || 
+                     string.IsNullOrWhiteSpace(vmRes.SchoolPhone) || string.IsNullOrWhiteSpace(vmRes.TeacherName) ||
+                     string.IsNullOrWhiteSpace(vmRes.TeacherEmail) || string.IsNullOrWhiteSpace(vmRes.TeacherCellPhone) || 
+                     string.IsNullOrWhiteSpace(vmRes.TourDate1) || string.IsNullOrWhiteSpace(vmRes.TourDate2) ||
+                     string.IsNullOrWhiteSpace(vmRes.TourDate3) || vmRes.NumberOfKids < MNFConfiguration.TourReservationMinKids);
         }
 
         private void SendNotification(string sender, string recip, string subject, string body, string replyTo = "")

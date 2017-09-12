@@ -1,0 +1,31 @@
+﻿@model mothernaturesfarm.web.ViewModels.VMCoupon
+@{
+    ViewBag.Title = "Coupons";
+    ViewBag.PgHdrPhoto = "photo-wide-1.jpg";
+    ViewBag.MetaDescription = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts {
+    @Scripts.Render("~/scripts/pgcoupons");
+}
+
+@Html.Partial("_PageHeader")
+
+<div class="row content-block blue medium-collapse box white-border">
+    <div class="large-8 medium-6 column">
+        <div class="inner">
+            <h2>Farm Coupon</h2>
+            <p>Thank you for completing the Mother Nature's Farm Coupon Form, please print your coupon by clicking on the "Print Coupon" button below.</p>
+            <input id="btnPrnCpn" type="button" value="Print Coupon" class="button" />
+
+            <img id="imgCpn" src="/Coupon" alt="Mother Nature's Farm Coupon" />
+
+        </div>
+    </div>
+    <div class="large-4 medium-6 column sidebar sidebar-right">
+        <div class="inner">
+            <h3>Coupons</h3>
+            <p></p>
+        </div>
+    </div>
+</div>

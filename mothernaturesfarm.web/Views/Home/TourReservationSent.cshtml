@@ -1,0 +1,40 @@
+﻿@model mothernaturesfarm.web.ViewModels.VMTourReservation
+@{
+    ViewBag.Title = "School Tour Reservations";
+    ViewBag.PgHdrPhoto = "photo-wide-animal-1.jpg";
+    ViewBag.MetaDescription = "Bring your class for a fun farm experience. Trips include a pumpkin, the straw bounce, a hayride, air bounce, feeding the farm animals and Alexander's Adventure Maze.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("_PageHeader")
+
+<div class="row content-block blue medium-collapse box white-border">
+    <div class="large-8 medium-6 column">
+        <div class="inner">
+            <h2>Reservation Form</h2>
+            <p>School tours run from October 1st, 2017 through October 31st 2017. Minimum tour group size is 20 children.</p>
+
+            <h4>Your reservation request is on it's way!</h4>
+            <p style="height: 300px;">
+                Thank you for your interest in touring Mother Nature's Farm! We will contact you soon with information on how we can best accommodate you.                
+            </p>
+
+        </div>
+
+    </div>
+    <div class="large-4 medium-6 column sidebar sidebar-right">
+        <div class="inner">
+            <h3>Please Note</h3>
+            <p>Tours run October 1st - 31st 2017<br>20 child minimum</p>
+            <p>Accept Cash, VISA, Mastercard & debit cards.</p>
+            <br>
+            <h3>Questions</h3>
+            <p>
+                Call<br>
+                <a href="tel:1-480-892-5874" class="telephone">480-892-5874</a><br>
+                OR<br>
+                <a href="/contactus" class="button expanded">Send A Message</a>
+            </p>
+        </div>
+    </div>
+</div>
