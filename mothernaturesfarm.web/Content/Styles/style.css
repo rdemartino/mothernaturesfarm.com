@@ -806,6 +806,7 @@ body.main-nav-open {
     line-height: 20px; }
 
 .image-box {
+  background-repeat: no-repeat;
   background-position: center center;
   background-size: cover; }
   .image-box img {
@@ -828,6 +829,15 @@ body.main-nav-open {
       margin-right: 20px; }
     .image-box.content.float-right {
       margin-left: 20px; }
+  .image-box.caption {
+    position: relative; }
+  .image-box .caption-text {
+    font-size: 10px;
+    position: absolute;
+    bottom: -28px;
+    left: 0;
+    right: 0;
+    text-align: center; }
 
 .featured-item {
   text-align: center;
@@ -2221,4 +2231,15 @@ be a descendant of the grid when it is being dragged.
   .home-header .cta-button-ctr {
     text-align: center;
     margin: 30px 0; }
+
+.image-gallery {
+  overflow: hidden; }
+  .image-gallery .image-box {
+    float: left;
+    width: 50%; }
+
+@media all and (min-width: 40em) {
+  .image-gallery .image-box {
+    float: left;
+    width: 33.3333%; } }
 

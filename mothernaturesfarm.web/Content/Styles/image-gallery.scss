@@ -1,0 +1,25 @@
+.image-gallery {
+	overflow: hidden;
+	.image-box {
+		float: left;
+		width: 50%;
+	}
+}
+
+// Responsive
+@media all and (min-width: $breakpoint-medium) {
+// Tablet & Up
+.image-gallery {
+	.image-box {
+		float: left;
+		width: 33.3333%;
+	}
+}
+// End Tablet & Up
+}
+
+@media all and (min-width: $breakpoint-large) {
+// Desktop & Up
+
+// End Desktop & Up
+}

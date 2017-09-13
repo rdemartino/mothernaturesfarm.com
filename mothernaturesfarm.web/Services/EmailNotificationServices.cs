@@ -25,7 +25,7 @@ namespace mothernaturesfarm.web.Services
                                                              $"{Environment.NewLine}Private Area Requested: {{13}}" +
                                                              $"{Environment.NewLine}Comments: {{14}}";
 
-        private static readonly string CONTACTUSSBJFRMTSTR = "Webiste Message From: {0}";
+        private static readonly string CONTACTUSSBJFRMTSTR = "Website Message From: {0}";
         private static readonly string CONTACTUSBODYFRMTSTR = "{0}" +
                                                               $"{Environment.NewLine}{Environment.NewLine}{{1}}" +
                                                               $"{Environment.NewLine}{{2}}" +
@@ -49,8 +49,8 @@ namespace mothernaturesfarm.web.Services
                                                   $"{Environment.NewLine}Tour DateTime 2: {{9}}" +
                                                   $"{Environment.NewLine}Tour DateTime 3: {{10}}" +
                                                   $"{Environment.NewLine}Number of Kids: {{11}}" +
-                                                  $"{Environment.NewLine}Sticker Option: {{12}}" +
-                                                  $"{Environment.NewLine}Number of Adults: {{13}}";
+                                                  $"{Environment.NewLine}Number of Adults: {{12}}" +
+                                                  $"{Environment.NewLine}Sticker Option: {{13}}";
 
         private static readonly string COUPONSBJFRMTSTR = "Coupon Request";
         private static readonly string COUPONBODYFRMTSTR = "A Coupon was requested from: Email: {{0}}" +
@@ -133,8 +133,8 @@ namespace mothernaturesfarm.web.Services
                 $"{vmTourRes.TourDate2.Trim()} {vmTourRes.SelectedTourTime2}",
                 $"{vmTourRes.TourDate3.Trim()} {vmTourRes.SelectedTourTime3}",
                 vmTourRes.NumberOfKids,
-                vmTourRes.IncludePackage,
-                vmTourRes.NumberOfAdults);
+                vmTourRes.NumberOfAdults,
+                vmTourRes.IncludePackage);
 
             try
             {

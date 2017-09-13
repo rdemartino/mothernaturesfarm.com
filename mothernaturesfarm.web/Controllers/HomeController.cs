@@ -56,11 +56,13 @@ namespace mothernaturesfarm.web.Controllers
             if (disabled > 0)
                 return (View("CouponsDisabled"));
 
-            MNFData mnfData = new MNFData();
-            if (mnfData.CouponIsEnabled(1))
-                return (View("Coupons", new VMCoupon()));
+            //MNFData mnfData = new MNFData();
+            //if (mnfData.CouponIsEnabled(1))
+            //    return (View("Coupons", new VMCoupon()));
 
-            return (View("CouponsDisabled"));
+            //return (View("CouponsDisabled"));
+
+            return (View("Coupons", new VMCoupon()));
         }
 
         [HttpPost]

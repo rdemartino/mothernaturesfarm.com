@@ -43,6 +43,7 @@
 	}
 }
 .image-box {
+	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
 	img {
@@ -72,6 +73,16 @@
 		&.float-right {
 			margin-left: 20px;
 		}
+	}
+	&.caption {
+		position: relative;
+	}
+	.caption-text {
+		font-size: 10px;
+		position: absolute;
+		bottom: -28px;
+		left: 0; right: 0;
+		text-align: center;
 	}
 
 }
