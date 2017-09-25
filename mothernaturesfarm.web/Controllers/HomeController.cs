@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using mothernaturesfarm.web.DataAccess;
 using mothernaturesfarm.web.Models;
 using mothernaturesfarm.web.Services;
@@ -38,7 +39,6 @@ namespace mothernaturesfarm.web.Controllers
         {
             return (View());
         }
-
         [HttpPost]
         public ActionResult ContactUs(VMContactUs vmContactUs)
         {
@@ -53,18 +53,12 @@ namespace mothernaturesfarm.web.Controllers
         [HttpGet]
         public ActionResult Coupons(int disabled = 0)
         {
-            if (disabled > 0)
-                return (View("CouponsDisabled"));
+            MNFData mnfData = new MNFData();
+            if (mnfData.CouponIsEnabled(1))
+                return (View("Coupons", new VMCoupon()));
 
-            //MNFData mnfData = new MNFData();
-            //if (mnfData.CouponIsEnabled(1))
-            //    return (View("Coupons", new VMCoupon()));
-
-            //return (View("CouponsDisabled"));
-
-            return (View("Coupons", new VMCoupon()));
+            return (View("CouponsDisabled"));
         }
-
         [HttpPost]
         public ActionResult Coupons(VMCoupon vmCoupon)
         {
@@ -77,7 +71,42 @@ namespace mothernaturesfarm.web.Controllers
 
             return (View("CouponsRegistered", new VMCoupon()));
         }
+        [HttpPost]
+        public ActionResult NewsletterSignup(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return(Json(-1));
 
+            MNFData mnfData = new MNFData();
+            string mbrEmail = email.Trim();
+            Member mbr = mnfData.FindMember(mbrEmail);
+            if (mbr == null)
+            {
+                mbr = new Member()
+                {
+                    FirstName = string.Empty,
+                    LastName = string.Empty,
+                    Address1 = string.Empty,
+                    Address2 = string.Empty,
+                    EmailAddress = mbrEmail,
+                    Password = string.Empty,
+                    NewsletterSubscriber = true,
+                    City = string.Empty,
+                    PostalCode = string.Empty,
+                    State = string.Empty,
+                    DateCreated = DateTime.Now,
+                    RecommendedBy = "home page newsletter signup"
+                };
+                mnfData.InsertMember(mbr);
+            }
+                
+            return(Json(0));
+        }
+        [HttpGet]
+        public ActionResult FAQ()
+        {
+            return(View());
+        }
         [HttpGet]
         public ActionResult FuturePlans()
         {
@@ -126,7 +155,6 @@ namespace mothernaturesfarm.web.Controllers
         {
             return (View("TourReservation", new VMTourReservation()));
         }
-
         [HttpPost]
         public ActionResult TourReservation(VMTourReservation vmTourReservation)
         {            

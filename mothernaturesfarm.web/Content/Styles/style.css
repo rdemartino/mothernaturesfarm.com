@@ -787,18 +787,23 @@ body.main-nav-open {
   .box.orange-bg {
     background-color: #F67721; }
   .box.image-link {
-    padding-top: 100px; }
+    padding-top: 100px;
+    text-decoration: none;
+    font-weight: normal; }
     .box.image-link span {
       display: block;
       background: #000;
       background: rgba(0, 0, 0, 0.5);
       color: #fff;
       padding: 10px;
-      line-height: 1.2em; }
+      line-height: 1.2em;
+      transition: all .3s; }
     .box.image-link .title {
       font-family: "Carter One", "Arial-Black", Arial, Helvetica, "Lucida Grande", sans-serif;
       font-size: 18px;
       padding-bottom: 0; }
+    .box.image-link:hover span {
+      background: #000; }
   .box img {
     width: 100%; }
   .box p {
@@ -928,6 +933,9 @@ body.main-nav-open {
 .family-photos img {
   width: 100%;
   margin-bottom: 8px; }
+
+.faq p strong {
+  display: block; }
 
 @media all and (min-width: 40em) {
   .content-block .sidebar {

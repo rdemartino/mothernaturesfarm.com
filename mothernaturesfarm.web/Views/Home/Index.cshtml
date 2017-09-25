@@ -3,6 +3,9 @@
     ViewBag.MetaDescription = "Come visit our family owned and operated farm for our Halloween Pumpkin Patch, or Snow Day and Christmas Trees. We also have a market with seasonal gifts.";
     Layout = "../Shared/_Layout.cshtml";
 }
+@section Scripts {
+    @Scripts.Render("~/scripts/newslettersignup");
+}
 <div class="row home-header">
     <div class="large-12 column">
         <div class="box white-border image-bg" style="background-image: url('/Content/Images/photo-wide-pumpkinpatch.jpg');">
@@ -12,8 +15,8 @@
                 <span class="post">at Mother Nature's Farm</span>
             </h1>
             <div class="cta-button-ctr">
-                <a href="/" class="button">Learn More</a>
-                <a href="/tickets" class="button">Buy Tickets</a>
+                <a href="/pumpkinpatch" class="button">Learn More</a>
+                <a href="/location" class="button">Directions &amp; Hours</a>
             </div>
         </div>
     </div>

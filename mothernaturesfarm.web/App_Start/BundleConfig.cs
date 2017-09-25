@@ -38,6 +38,9 @@ namespace mothernaturesfarm.web
             bundles.Add(new ScriptBundle("~/scripts/pgcoupons").Include(
                 "~/Content/Scripts/pg-coupons.js"));
 
+            bundles.Add(new ScriptBundle("~/scripts/newslettersignup").Include(
+                "~/Content/Scripts/pg-nlsignup.js"));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/scripts/modernizr").Include(
