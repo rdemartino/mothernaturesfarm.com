@@ -424,7 +424,7 @@ body {
   width: 150px;
   height: 115px;
   text-align: center;
-  padding-top: 46px;
+  padding-top: 36px;
   transform: rotate(9deg);
   animation: hours-sign 10s forwards infinite; }
   .top-bar-hours strong, .top-bar-hours em {
@@ -765,7 +765,7 @@ body.main-nav-open {
     background-size: 200px 154px;
     width: 200px;
     height: 154px;
-    padding-top: 60px; }
+    padding-top: 50px; }
     .top-bar-hours strong, .top-bar-hours em {
       font-size: 16px; }
     .top-bar-hours em {
