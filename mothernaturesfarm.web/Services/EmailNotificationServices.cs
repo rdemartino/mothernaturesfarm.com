@@ -23,7 +23,8 @@ namespace mothernaturesfarm.web.Services
                                                              $"{Environment.NewLine}Number of Children: {{11}}" +
                                                              $"{Environment.NewLine}Number Of Adults: {{12}}" +
                                                              $"{Environment.NewLine}Private Area Requested: {{13}}" +
-                                                             $"{Environment.NewLine}Comments: {{14}}";
+                                                             $"{Environment.NewLine}Fire Pit Area Requested: {{14}}" +
+                                                             $"{Environment.NewLine}Comments: {{15}}";
 
         private static readonly string CONTACTUSSBJFRMTSTR = "Website Message From: {0}";
         private static readonly string CONTACTUSBODYFRMTSTR = "{0}" +
@@ -98,6 +99,7 @@ namespace mothernaturesfarm.web.Services
                 vmPartyRes.PartyDate.Trim(), vmPartyRes.SelectedPartyTime, vmPartyRes.NumberOfKids,
                 vmPartyRes.NumberOfAdults,
                 vmPartyRes.AddPrivateArea, 
+                vmPartyRes.AddFirePitArea,
                 string.IsNullOrWhiteSpace(vmPartyRes.Comments) ? string.Empty : vmPartyRes.Comments.Trim());
 
             try
@@ -155,6 +157,7 @@ namespace mothernaturesfarm.web.Services
         {
             string body = string.Format(COUPONBODYFRMTSTR, 
                 vmCoupon.Email.Trim(), 
+                $"{vmCoupon.FirstName} {vmCoupon.LastName}",
                 vmCoupon.StreetAddress.Trim(), 
                 string.Empty,
                 vmCoupon.City.Trim(), 
@@ -209,7 +212,7 @@ namespace mothernaturesfarm.web.Services
             mailMsg.Body = body;            
             mailMsg.IsBodyHtml = false;
             
-            SmtpClient smtp = new SmtpClient();            
+            SmtpClient smtp = new SmtpClient();
             smtp.Send(mailMsg);
         }
 

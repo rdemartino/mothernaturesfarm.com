@@ -69,16 +69,16 @@
                         <label>
                             Child's Name
                             @Html.TextBoxFor(m => m.ChildName, new { placeholder = "Child's Name...", required = "required" })
-                        </label>                      
+                        </label>
                         <label>
                             Child's Age
                             @Html.TextBoxFor(m => m.ChildAge, new { placeholder = "Child's Age...", required = "required" })
-                        </label>                    
+                        </label>
                         <div class="row subgroup">
                             <div class="column medium-6">
                                 <label>
-                                    Date                                    
-                                    @Html.TextBoxFor(m => m.PartyDate, new { placeholder = "Date...", required = "required", id="PartyDate" })
+                                    Date
+                                    @Html.TextBoxFor(m => m.PartyDate, new { placeholder = "Date...", required = "required", id = "PartyDate" })
                                 </label>
                             </div>
                             <div class="column medium-6">
@@ -90,19 +90,28 @@
                         </div>
                         <label>
                             Number of Kids (10 minimum)
-                            @Html.TextBoxFor(m => m.NumberOfKids, new { placeholder = "Number of Kids (10 minimum)...", required = "required", min="10" })
+                            @Html.TextBoxFor(m => m.NumberOfKids, new { placeholder = "Number of Kids (10 minimum)...", required = "required", min = "10" })
                         </label>
                         <label>
                             Number of Adults
                             @Html.TextBoxFor(m => m.NumberOfAdults, new { placeholder = "Number of Adults...", required = "required" })
                         </label>
+
                         <label style="margin-bottom: 0;">Add Private Party Area</label>
-                    
                         <fieldset>
                             <legend>Add Private Area</legend>
                             <label for="option1">
-                                @Html.CheckBoxFor(m=>m.AddPrivateArea, new {id="option1"})
-                                Private Party Area (+$100)                            
+                                @Html.CheckBoxFor(m => m.AddPrivateArea, new { id = "option1" })
+                                Private Party Area (+$100)
+                            </label>
+                        </fieldset>
+
+                        <label style="margin-bottom: 0;">Add Fire Pit Area</label>
+                        <fieldset>
+                            <legend>Add Fire pit</legend>
+                            <label for="option2">
+                                @Html.CheckBoxFor(m => m.AddFirePitArea, new { id = "option2" })
+                                Fire Pit Area (+$25)
                             </label>
                         </fieldset>
 

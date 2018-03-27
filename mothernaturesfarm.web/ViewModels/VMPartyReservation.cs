@@ -60,6 +60,8 @@ namespace mothernaturesfarm.web.ViewModels
 
         public bool AddPrivateArea { get; set; }
 
+        public bool AddFirePitArea { get; set; }
+
         public string Comments { get; set; }
     }
 }
