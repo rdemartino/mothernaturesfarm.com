@@ -217,6 +217,7 @@
     <Content Include="Content\Images\photo-animals-7.jpg" />
     <Content Include="Content\Images\photo-animals-8.jpg" />
     <Content Include="Content\Images\photo-animals-9.jpg" />
+    <Content Include="Content\Images\photo-animals-goat.jpg" />
     <Content Include="Content\Images\photo-bouncehouse.jpg" />
     <Content Include="Content\Images\photo-family-1.jpg" />
     <Content Include="Content\Images\photo-family-2.jpg" />
@@ -228,11 +229,15 @@
     <Content Include="Content\Images\photo-party-1.jpg" />
     <Content Include="Content\Images\photo-party-2.jpg" />
     <Content Include="Content\Images\photo-party-3.jpg" />
+    <Content Include="Content\Images\photo-piglets.jpg" />
     <Content Include="Content\Images\photo-pumpkinpatch-1.jpg" />
     <Content Include="Content\Images\photo-pumpkinpatch-2.jpg" />
     <Content Include="Content\Images\photo-pumpkinpatch-3.jpg" />
+    <Content Include="Content\Images\photo-salsa.jpg" />
+    <Content Include="Content\Images\photo-santa-isaac.jpg" />
     <Content Include="Content\Images\photo-snowday-1.jpg" />
     <Content Include="Content\Images\photo-snowday-2.jpg" />
+    <Content Include="Content\Images\photo-spidercrawl.jpg" />
     <Content Include="Content\Images\photo-tractor.jpg" />
     <Content Include="Content\Images\photo-wade-1.jpg" />
     <Content Include="Content\Images\photo-wide-1.jpg" />
@@ -249,6 +254,7 @@
     <Content Include="Content\Images\photo-wide-snowday.jpg" />
     <Content Include="Content\Images\photo-wide-story.jpg" />
     <Content Include="Content\Images\photo-wide-truck.jpg" />
+    <Content Include="Content\Images\photo-wide-truckheads.jpg" />
     <Content Include="Content\Images\scene-cloud.png" />
     <Content Include="Content\Images\scene-fence.png" />
     <Content Include="Content\Images\scene-grass.png" />
