@@ -89,22 +89,13 @@
                             </div>
                         </div>
                         <label>
-                            Number of Kids (10 minimum)
+                            Number of Kids (10 minimum, $10.00ea.)
                             @Html.TextBoxFor(m => m.NumberOfKids, new { placeholder = "Number of Kids (10 minimum)...", required = "required", min = "10" })
                         </label>
                         <label>
-                            Number of Adults
+                            Number of Adults ($5.00ea)
                             @Html.TextBoxFor(m => m.NumberOfAdults, new { placeholder = "Number of Adults...", required = "required" })
-                        </label>
-
-                        <label style="margin-bottom: 0;">Add Private Party Area</label>
-                        <fieldset>
-                            <legend>Add Private Area</legend>
-                            <label for="option1">
-                                @Html.CheckBoxFor(m => m.AddPrivateArea, new { id = "option1" })
-                                Private Party Area (+$100)
-                            </label>
-                        </fieldset>
+                        </label>                        
 
                         <label style="margin-bottom: 0;">Add Fire Pit Area</label>
                         <fieldset>
@@ -131,8 +122,11 @@
         <div class="inner">
             <h3>Please Note</h3>
             <p>10 child minimum</p>
-            <p><strong>Private Area</strong><br>
-                additional $100</p>
+            <p>
+                Party Area: $100.00<br />
+                Children: $10.00<br />
+                Adults: $5.00<br />       
+            </p>
             <p>Accept Cash and all major credit cards.  Debit cards NOT accepted.</p>
 
             <br>

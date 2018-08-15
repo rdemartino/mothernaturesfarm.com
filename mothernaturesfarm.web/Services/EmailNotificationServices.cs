@@ -22,9 +22,8 @@ namespace mothernaturesfarm.web.Services
                                                              $"{Environment.NewLine}Date: {{9}} {{10}}" +
                                                              $"{Environment.NewLine}Number of Children: {{11}}" +
                                                              $"{Environment.NewLine}Number Of Adults: {{12}}" +
-                                                             $"{Environment.NewLine}Private Area Requested: {{13}}" +
-                                                             $"{Environment.NewLine}Fire Pit Area Requested: {{14}}" +
-                                                             $"{Environment.NewLine}Comments: {{15}}";
+                                                             $"{Environment.NewLine}Fire Pit Area Requested: {{13}}" +
+                                                             $"{Environment.NewLine}Comments: {{14}}";
 
         private static readonly string CONTACTUSSBJFRMTSTR = "Website Message From: {0}";
         private static readonly string CONTACTUSBODYFRMTSTR = "{0}" +
@@ -98,7 +97,6 @@ namespace mothernaturesfarm.web.Services
                 vmPartyRes.PostalCode.Trim(),
                 vmPartyRes.PartyDate.Trim(), vmPartyRes.SelectedPartyTime, vmPartyRes.NumberOfKids,
                 vmPartyRes.NumberOfAdults,
-                vmPartyRes.AddPrivateArea, 
                 vmPartyRes.AddFirePitArea,
                 string.IsNullOrWhiteSpace(vmPartyRes.Comments) ? string.Empty : vmPartyRes.Comments.Trim());
 
