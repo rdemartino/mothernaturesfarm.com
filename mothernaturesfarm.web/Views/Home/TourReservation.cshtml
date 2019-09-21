@@ -83,16 +83,9 @@
                     <div class="group">
                         <h4>Kids</h4>
                         <label>
-                            Number of Kids (20 child minimum)
+                            Number of Kids (20 child minimum, $8.00 per child)
                             @Html.TextBoxFor(m => m.NumberOfKids, new { placeholder = "Number of Kids (20 child minimum)...", required = "required" })
-                        </label>
-                        <fieldset>
-                            <legend>Package</legend>                            
-                            <label for="IncludePackage">                                
-                                @Html.RadioButtonFor(m => m.IncludePackage, "Please INCLUDE pumpkin and stickers ($8)", new {@checked="checked"})
-                                1 Pumpkin &amp; Stickers ($8.00 per child)
-                            </label>                            
-                        </fieldset>
+                        </label>                        
                     </div>
                     <div class="group">
                         <h4>Adults</h4>
