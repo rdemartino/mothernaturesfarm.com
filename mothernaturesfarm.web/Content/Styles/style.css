@@ -557,7 +557,13 @@ body {
 .top-bar-left .social a {
     top: -7px;
     position: relative;
-    margin-left: 20px;
+    margin-left: 10px;
+}
+.top-bar-left .social a:nth-child(2) {
+    top: -7px;
+    position: relative;
+    margin-left: -15px;
+
 }
 .menu-toggle {
     z-index: 102;
@@ -612,11 +618,21 @@ body {
     display: block;
     text-indent: -5000px;
 }
-
 .facebook-icon:hover {
     background-position: 0 0;
 }
-
+.instagram-icon {
+    background-image: url("/Content/Images/instagram-icon.png");
+    background-size: 60px 60px;
+    background-position: 0 -30px;
+    width: 30px;
+    height: 30px;
+    display: block;
+    text-indent: -5000px;
+}
+.instagram-icon:hover {
+    background-position: 0 0;
+}
 .footer {
     background: #4E3B23;
     color: #fff;
@@ -923,8 +939,12 @@ body.main-nav-open .social {
 body.main-nav-open .social a {
     margin-left: 0;
 }
+body.main-nav-open .social a:nth-child(2) {
+    margin-left: 80px;
+}
 
-body.main-nav-open .facebook-icon {
+body.main-nav-open .facebook-icon,
+body.main-nav-open .instagram-icon {
     text-indent: 40px;
     line-height: 30px;
 }
