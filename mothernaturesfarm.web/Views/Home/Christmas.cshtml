@@ -3,25 +3,28 @@
     ViewBag.PgHdrPhoto = "photo-wide-christmas.jpg";
     ViewBag.MetaDescription = "Come visit our family owned and operated farm for Snow Day and Christmas Trees. We also have a market with seasonal gifts.";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    DateTime snowDayBeginDate = Convert.ToDateTime(Resources.Strings.SnowDayBeginDate);
+    DateTime snowDayEndDate = Convert.ToDateTime(Resources.Strings.SnowDayEndDate);
 }
 
 @Html.Partial("_PageHeader")
+
 
 <div class="row content-block blue medium-collapse box white-border">
     <div class="large-8 medium-6 column">
         <div class="inner">
             <h2>Visit the farm for a day in the snow!</h2>
             <p>
-                Mother Nature's Farm annual snow day Saturday December 14th, 2019 
-                from 9:00am to 6:00pm. Bring your mittens and a snow tube, grab your 
+                Mother Nature's Farm annual snow day @snowDayBeginDate.ToLongDateString()
+                from @snowDayBeginDate.ToString("h:mm tt") to @snowDayEndDate.ToString("h:mm tt") Bring your mittens and a snow tube, grab your 
                 friends and neighbors to come join the fun at Mother Nature's Farm.
             </p>
             
             <div class="image-box content float-right border blue" style="background-image: url(/Content/Images/photo-snowday-1.jpg);"><img src="/Content/Images/img.png" alt="Snow Day at Mother Nature's Farm" /></div>
 
             <p>
-                Kids are $10.00 that includes the snow hill all day, the hayride, 
-                spider web crawl, maze, air bounce and the animals, the adults are $5.00 
+                Kids are @Resources.Strings.SnowDayCostPerChild that includes the snow hill all day, the hayride, 
+                spider web crawl, maze, air bounce and the animals, the adults are @Resources.Strings.SnowDayCostPerAdult 
                 to tag along. Maneau's Munchies will be open on the weekends for snack 
                 food, etc hotdogs, popcorn, cotton candy, chips, soda and hot drinks.
             </p>
@@ -47,7 +50,7 @@
             <h3>Holiday Hours</h3>
             <p>Monday - Thursday<br>3pm to 9pm</p>
             <p>Friday, Saturday, Sunday<br>9am to 9pm</p>
-            <p>Snow Day, December 14th<br />9am to 6pm</p>
+            <p>Snow Day, @snowDayBeginDate.ToString("MMMM dd, yyyy")<br />@snowDayBeginDate.ToString("h:mm tt") to @snowDayEndDate.ToString("h:mm tt")</p>
             <p>Christmas Eve<br>9am to 3pm</p>
 
             <div class="image-box" style="background-image: url(/Content/Images/photo-santa-isaac.jpg);"><img src="/Content/Images/img.png" alt="Christmas Market at Mother Nature's Farm" /></div>

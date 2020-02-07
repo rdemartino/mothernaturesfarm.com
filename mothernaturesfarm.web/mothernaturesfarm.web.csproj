@@ -160,11 +160,14 @@
     <Compile Include="Controllers\CouponController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DataAccess\MNFData.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Extensions\IntegerExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="MNFConfiguration.cs" />
+    <Compile Include="Models\Class1.cs" />
     <Compile Include="Models\Coupon.cs" />
     <Compile Include="Models\CouponMemberUsage.cs" />
     <Compile Include="Models\CouponRegistrationResult.cs" />
@@ -177,6 +180,11 @@
     <Compile Include="Services\CouponService.cs" />
     <Compile Include="Services\EmailNotificationServices.cs" />
     <Compile Include="Services\SessionService.cs" />
+    <Compile Include="Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\VMBase.cs" />
     <Compile Include="ViewModels\VMCoupon.cs" />
     <Compile Include="ViewModels\VMPartyReservation.cs" />
@@ -380,6 +388,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Resources</CustomToolNamespace>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

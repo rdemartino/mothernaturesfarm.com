@@ -1,8 +1,14 @@
-﻿@{
+﻿@using mothernaturesfarm.web.Extensions
+@{
     ViewBag.Title = "School Tours & Birthday Parties";
     ViewBag.PgHdrPhoto = "photo-wide-parties.jpg";
     ViewBag.MetaDescription = "Bring your class or have a party for a fun farm experience. Trips include a pumpkin, a hayride, air bounce, feeding the farm animals and Alexander's Adventure Maze.";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    DateTime schoolTourBeginDate = Convert.ToDateTime(Resources.Strings.SchoolToursBeginDate);
+    DateTime schoolTourEndDate = Convert.ToDateTime(Resources.Strings.SchoolToursEndDate);
+    DateTime bDayTimeStart = Convert.ToDateTime(Resources.Strings.BDayPartyTimeStart);
+    DateTime bDayTimeEnd = Convert.ToDateTime(Resources.Strings.BDayPartyTimeEnd);
 }
 @Html.Partial("_PageHeader")
 <div class="row content-block blue medium-collapse box white-border">
@@ -10,17 +16,17 @@
         <div class="inner">
             <h3>School Tours</h3>
             <p>
-                October 1st - 31st<br>
+                @schoolTourBeginDate.ToString("MMMM dnn", true) - @schoolTourEndDate.ToString(" dnn", true)<br/>
                 Monday - Friday<br>
-                9am to 3pm
+                @schoolTourBeginDate.ToString("htt") to @schoolTourEndDate.ToString("htt")
             </p>
             <p>                
                 <a href="/tourreservation" class="button expanded">Reserve Online</a>
             </p>
             <p>
                 <strong>20 children or more</strong><br>
-                $8.00 per child<br>
-                $3.00 per adult
+                @Resources.Strings.SchoolTourCostPerChild per child<br>
+                @Resources.Strings.SchoolTourCostPerAdult per adult
             </p>
             <p>
                 <strong>25 children or more</strong><br>
@@ -59,12 +65,13 @@
             </p>
 
             <p>
-                School tours start October 1st and end October 31st, Monday through 
-                Friday from 9am to 3pm. Please schedule online or call soon, reservations fill up fast.
+                School tours start @schoolTourBeginDate.ToString("MMMM dnn", true) and end @schoolTourEndDate.ToString("MMMM dnn", true), Monday through 
+                Friday from @schoolTourBeginDate.ToString("htt") to @schoolTourEndDate.ToString("htt"). Please schedule online or call soon, reservations fill up fast.
             </p>
 
             <p>
-                If you book a group of 20 children or more the cost is $8.00 per child and $3.00 per 
+                If you book a group of 20 children or more the cost is @Resources.Strings.SchoolTourCostPerChild per child 
+                and @Resources.Strings.SchoolTourCostPerAdult per 
                 adult, does not include a tour guide. If you book a tour of 25 children or more it will 
                 include a tour guide. Please remind your parents that siblings need to be added in class numbers or 
                 they will be charged full price at the gate.
@@ -112,22 +119,21 @@
             <h3>Birthday Parties</h3>
             <p>
                 7 Days a Week<br>
-                9am to 9pm
+                @bDayTimeStart.ToString("htt") to @bDayTimeEnd.ToString("htt")
             </p>
-            <p><strong>Note: On October 31st, <br>we close at 6pm.</strong></p>
 
             <p>
                 <a href="/partyreservation" class="button expanded">Reserve Online</a>
             </p>
 
             <p>
-                $10.00 per child<br>
-                $5.00 per adult
+                @Resources.Strings.PartyResCostPerChild child<br>
+                @Resources.Strings.PartyResCostPerAdult per adult
             </p>
             
             <p>
                 <strong>Fire Pit Area</strong><br>
-                additional $25
+                additional @Resources.Strings.FirePitCost
             </p>
 
             <p>Accept Cash and all major credit cards.</p>

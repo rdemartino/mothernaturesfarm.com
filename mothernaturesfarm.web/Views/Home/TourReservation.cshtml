@@ -4,6 +4,9 @@
     ViewBag.PgHdrPhoto = "photo-wide-animal-1.jpg";
     ViewBag.MetaDescription = "Bring your class for a fun farm experience. Trips include a pumpkin, a hayride, air bounce, feeding the farm animals and Alexander's Adventure Maze.";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    DateTime schoolTourBeginDate = Convert.ToDateTime(Resources.Strings.SchoolToursBeginDate);
+    DateTime schoolTourEndDate = Convert.ToDateTime(Resources.Strings.SchoolToursEndDate);
 }
 @section Scripts {
     @Scripts.Render("~/scripts/pgtourres")
@@ -14,7 +17,7 @@
     <div class="large-8 medium-6 column">
         <div class="inner">
             <h2>Reservation Form</h2>
-            <p>School tours run from October 1st through October 31st. Minimum tour group size is 20 children.</p>
+            <p>School tours run from @schoolTourBeginDate.ToString("M") through @schoolTourEndDate.ToString("M"). Minimum tour group size is 20 children.</p>
 
             @using (Html.BeginForm("TourReservation", "Home", FormMethod.Post))
             {

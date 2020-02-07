@@ -1,8 +1,12 @@
-﻿@{
+﻿@using mothernaturesfarm.web.Extensions
+@{
     ViewBag.Title = "Pumpkin Patch";
     ViewBag.PgHdrPhoto = "photo-wide-pumpkinpatch.jpg";
     ViewBag.MetaDescription = "Come visit The Pumpkin Patch at Mother Nature’s Farm, rated Arizona’s best in the New Times.";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    DateTime pPatchBeginDate = Convert.ToDateTime(Resources.Strings.PumpkinPatchBeginDate);
+    DateTime pPatchEndDate = Convert.ToDateTime(Resources.Strings.PumpkinPatchEndDate);
 }
 
 @Html.Partial("_PageHeader")
@@ -15,7 +19,7 @@
 
             <p>
                 Load up the family, bring your friends and neighbors. Come visit The Pumpkin Patch at Mother Nature’s Farm,
-                rated Arizona’s best in the New Times. Our opening day is September 28th through October 31st.
+                rated Arizona’s best in the New Times. Our opening day is @pPatchBeginDate.ToString("MMMM dnn", true) through @pPatchEndDate.ToString("MMMM dnn", true).
             </p>
             <div class="image-box content float-right border orange" style="background-image: url(/Content/Images/photo-pumpkinpatch-3.jpg);"><img src="/Content/Images/img.png" alt="The Pumpkin Patch at Mother Nature's Farm" /></div>
             <p>
@@ -75,9 +79,10 @@
         <div class="inner">
             <h3>Pumpkin Patch</h3>
             <p>
-                September 28th - October 31st<br />
+                @pPatchBeginDate.ToString("MMMM dnn", true) - @pPatchEndDate.ToString("MMMM dnn", true)<br />
                 Monday - Sunday<br />
-                9am to 9pm<br />
+                @pPatchBeginDate.ToString("htt") to @pPatchEndDate.ToString("htt")
+                <br />
             </p>
             <p>
                 Kids $10.00 Adults $5.00

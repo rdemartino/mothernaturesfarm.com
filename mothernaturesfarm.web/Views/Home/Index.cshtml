@@ -1,7 +1,9 @@
-﻿@{
+﻿@using mothernaturesfarm.web.Extensions
+@{
     ViewBag.Title = "Home";
     ViewBag.MetaDescription = "Come visit our family owned and operated farm for our Halloween Pumpkin Patch, or Snow Day and Christmas Trees. We also have a market with seasonal gifts.";
     Layout = "../Shared/_Layout.cshtml";
+    DateTime openingDate = Convert.ToDateTime(Resources.Strings.OpeningDayDate);
 }
 @section Scripts {
     @Scripts.Render("~/scripts/newslettersignup");
@@ -37,7 +39,7 @@
                     <img src="/Content/Images/img.png" alt="Pumpkin Patch" />
                 </div>
                 <h3>Brooke's Pumpkin Patch</h3>
-                <p>Visit our Pumpkin Patch, rated Arizona's best in the New Times. Opening day is September 28th. Come pick out that perfect pumpkin, and check out the fall activities.</p>
+                <p>Visit our Pumpkin Patch, rated Arizona's best in the New Times. Opening day is @openingDate.ToString("MMMM dnn", true). Come pick out that perfect pumpkin, and check out the fall activities.</p>
                 <a href="/pumpkinpatch" class="button block">Visit The Patch</a>
             </div>
         </div>
