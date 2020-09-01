@@ -115,11 +115,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to $10.00.
+        /// </summary>
+        public static string PartyResCostPerPerson {
+            get {
+                return ResourceManager.GetString("PartyResCostPerPerson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 2020-09-26 09:00:00.00.
         /// </summary>
         public static string PumpkinPatchBeginDate {
             get {
                 return ResourceManager.GetString("PumpkinPatchBeginDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to $10.00.
+        /// </summary>
+        public static string PumpkinPatchCostPerPerson {
+            get {
+                return ResourceManager.GetString("PumpkinPatchCostPerPerson", resourceCulture);
             }
         }
         
@@ -151,6 +169,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to $8.00.
+        /// </summary>
+        public static string SchoolTourCostPerPerson {
+            get {
+                return ResourceManager.GetString("SchoolTourCostPerPerson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 2020-10-01 09:00:00.00.
         /// </summary>
         public static string SchoolToursBeginDate {
@@ -160,7 +187,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 2020-10-31 18:00:00.00.
+        ///   Looks up a localized string similar to 2020-10-31 15:00:00.00.
         /// </summary>
         public static string SchoolToursEndDate {
             get {

@@ -89,11 +89,11 @@
                             </div>
                         </div>
                         <label>
-                            Number of Kids (10 minimum, $10.00ea.)
+                            Number of Kids (10 minimum, $10.00ea. includes pumpkin)
                             @Html.TextBoxFor(m => m.NumberOfKids, new { placeholder = "Number of Kids (10 minimum)...", required = "required", min = "10" })
                         </label>
                         <label>
-                            Number of Adults ($5.00ea)
+                            Number of Adults ($10.00ea. includes pumpkin)
                             @Html.TextBoxFor(m => m.NumberOfAdults, new { placeholder = "Number of Adults...", required = "required" })
                         </label>                        
 
@@ -124,8 +124,7 @@
             <p>10 child minimum</p>
             <p>
                 Party Area: PLUS $100.00<br />
-                Children: $10.00<br />
-                Adults: $5.00<br />
+                @Resources.Strings.PartyResCostPerPerson per person
             </p>
             <p>Accept Cash and all major credit cards.</p>
             <p>

@@ -135,8 +135,14 @@
   <data name="PartyResCostPerChild" xml:space="preserve">
     <value>$10.00</value>
   </data>
+  <data name="PartyResCostPerPerson" xml:space="preserve">
+    <value>$10.00</value>
+  </data>
   <data name="PumpkinPatchBeginDate" xml:space="preserve">
     <value>2020-09-26 09:00:00.00</value>
+  </data>
+  <data name="PumpkinPatchCostPerPerson" xml:space="preserve">
+    <value>$10.00</value>
   </data>
   <data name="PumpkinPatchEndDate" xml:space="preserve">
     <value>2020-10-31 21:00:00.00</value>
@@ -147,11 +153,14 @@
   <data name="SchoolTourCostPerChild" xml:space="preserve">
     <value>$8.00</value>
   </data>
+  <data name="SchoolTourCostPerPerson" xml:space="preserve">
+    <value>$8.00</value>
+  </data>
   <data name="SchoolToursBeginDate" xml:space="preserve">
     <value>2020-10-01 09:00:00.00</value>
   </data>
   <data name="SchoolToursEndDate" xml:space="preserve">
-    <value>2020-10-31 18:00:00.00</value>
+    <value>2020-10-31 15:00:00.00</value>
   </data>
   <data name="SnowDayBeginDate" xml:space="preserve">
     <value>2020-12-12 09:00:00.00</value>

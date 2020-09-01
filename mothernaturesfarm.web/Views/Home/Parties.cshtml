@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "School Tours & Birthday Parties";
     ViewBag.PgHdrPhoto = "photo-wide-parties.jpg";
-    ViewBag.MetaDescription = "Bring your class or have a party for a fun farm experience. Trips include a pumpkin, a hayride, air bounce, feeding the farm animals and Alexander's Adventure Maze.";
+    ViewBag.MetaDescription = "Bring your class or have a party for a fun farm experience. Trips include a pumpkin, a hayride, feeding the farm animals and Alexander's Adventure Maze.";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
     DateTime schoolTourBeginDate = Convert.ToDateTime(Resources.Strings.SchoolToursBeginDate);
@@ -25,8 +25,7 @@
             </p>
             <p>
                 <strong>20 children or more</strong><br>
-                @Resources.Strings.SchoolTourCostPerChild per child<br>
-                @Resources.Strings.SchoolTourCostPerAdult per adult
+                @Resources.Strings.SchoolTourCostPerPerson per person
             </p>
             <p>
                 <strong>25 children or more</strong><br>
@@ -58,7 +57,7 @@
 
             <p>
                 Bring your class, or your whole school for a fun farm experience. Trips include an OZ 
-                pumpkin, a hayride, the spider web crawl, the air bounce, feeding the farm animals 
+                pumpkin, a hayride, the spider web crawl, feeding the farm animals 
                 and Alexander's Adventure Maze. Our shady picnic area is available for you to bring your 
                 sack lunch or you can visit Maneau's Munchies. Enjoy the great outdoors and let your children 
                 run off that extra energy before you go back to class.
@@ -70,9 +69,7 @@
             </p>
 
             <p>
-                If you book a group of 20 children or more the cost is @Resources.Strings.SchoolTourCostPerChild per child 
-                and @Resources.Strings.SchoolTourCostPerAdult per 
-                adult, does not include a tour guide. If you book a tour of 25 children or more it will 
+                If you book a group of 20 children or more the cost is @Resources.Strings.SchoolTourCostPerPerson per person, does not include a tour guide. If you book a tour of 25 children or more it will 
                 include a tour guide. Please remind your parents that siblings need to be added in class numbers or 
                 they will be charged full price at the gate.
             </p>
@@ -99,7 +96,7 @@
                 Birthday parties at the farm with a 10 child minimum include a pumpkin for each child to 
                 take home, the hayride, spider web crawl, 
                 Alexander’s Adventure Maze, the animals and a private air bounce all for $100.00 plus 
-                $10.00 per child and $5.00 per adult for entrance into the farm and to tag along on the hayride.
+                $10.00 per person.
             </p>
 
             <div class="image-box content float-right border green" style="background-image: url(/Content/Images/photo-party-3.jpg);"><img src="/Content/Images/img.png" alt="Private Parties at Mother Nature's Farm" /></div>
@@ -107,10 +104,6 @@
             <p>
                 You are welcome to bring food, cake, and party activities. 4 tables will be reserved 
                 for 2 hours but guests may stay at the farm as long as they wish once your party has ended.
-            </p>
-
-            <p>
-                <em><strong style="font-weight: bold;">Please Note:</strong> Pumpkins are not included with the adult admission.</em>
             </p>
         </div>
     </div>
@@ -127,8 +120,7 @@
             </p>
 
             <p>
-                @Resources.Strings.PartyResCostPerChild child<br>
-                @Resources.Strings.PartyResCostPerAdult per adult
+                @Resources.Strings.PartyResCostPerPerson per person
             </p>
             
             <p>
