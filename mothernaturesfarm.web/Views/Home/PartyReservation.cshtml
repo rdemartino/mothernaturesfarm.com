@@ -89,11 +89,11 @@
                             </div>
                         </div>
                         <label>
-                            Number of Kids (10 minimum, $10.00ea.)
+                            Number of Kids (10 minimum, $10.00ea. includes pumpkin)
                             @Html.TextBoxFor(m => m.NumberOfKids, new { placeholder = "Number of Kids (10 minimum)...", required = "required", min = "10" })
                         </label>
                         <label>
-                            Number of Adults ($5.00ea)
+                            Number of Adults ($10.00ea. includes pumpkin)
                             @Html.TextBoxFor(m => m.NumberOfAdults, new { placeholder = "Number of Adults...", required = "required" })
                         </label>                        
 
@@ -123,19 +123,24 @@
             <h3>Please Note</h3>
             <p>10 child minimum</p>
             <p>
-                Party Area: $100.00<br />
-                Children: $10.00<br />
-                Adults: $5.00<br />       
+                Party Area: PLUS $100.00<br />
+                @Resources.Strings.PartyResCostPerPerson per person
             </p>
-            <p>Accept Cash and all major credit cards.  Debit cards NOT accepted.</p>
-
-            <br>
+            <p>Accept Cash and all major credit cards.</p>
+            <p>
+                $10 minimum on credit card purchases.
+            </p>
+            <p>
+                Sales inside the farm are CASH ONLY.
+            </p>
             <h3>Questions</h3>
-            <p>Call<br>
+            <p>
+                Call<br>
                 <a href="tel:1-480-892-5874" class="telephone">480-892-5874</a><br>
                 OR<br>
-                <a href="/contactus" class="button expanded">Send A Message</a></p>
-            
+                <a href="/contactus" class="button expanded">Send A Message</a>
+            </p>
+
             <h3>Invitationas</h3>
             <p>
                 <a href="https://www.evite.com/event/create/?add=1663%20East%20Baseline%20Road&change_design_category=featured&ct=Gilbert&eventType=kids_corner&event_type=&nm=Mother%20Nature%27s%20Farms&st=AZ&template=farmanimals&zip=85233" target="_blank" class="button expanded">Create your Party Invitations</a>

@@ -4,6 +4,9 @@
     ViewBag.PgHdrPhoto = "photo-wide-animal-1.jpg";
     ViewBag.MetaDescription = "Bring your class for a fun farm experience. Trips include a pumpkin, a hayride, air bounce, feeding the farm animals and Alexander's Adventure Maze.";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    DateTime schoolTourBeginDate = Convert.ToDateTime(Resources.Strings.SchoolToursBeginDate);
+    DateTime schoolTourEndDate = Convert.ToDateTime(Resources.Strings.SchoolToursEndDate);
 }
 @section Scripts {
     @Scripts.Render("~/scripts/pgtourres")
@@ -14,7 +17,7 @@
     <div class="large-8 medium-6 column">
         <div class="inner">
             <h2>Reservation Form</h2>
-            <p>School tours run from October 1st, 2018 through October 31st 2018. Minimum tour group size is 20 children.</p>
+            <p>School tours run from @schoolTourBeginDate.ToString("M") through @schoolTourEndDate.ToString("M"). Minimum tour group size is 20 children.</p>
 
             @using (Html.BeginForm("TourReservation", "Home", FormMethod.Post))
             {
@@ -83,26 +86,14 @@
                     <div class="group">
                         <h4>Kids</h4>
                         <label>
-                            Number of Kids (20 child minimum)
+                            Number of Kids (20 child minimum, $8.00 per child includes pumpkin)
                             @Html.TextBoxFor(m => m.NumberOfKids, new { placeholder = "Number of Kids (20 child minimum)...", required = "required" })
-                        </label>
-                        <fieldset>
-                            <legend>Package</legend>                            
-                            <label for="IncludePackage">                                
-                                @Html.RadioButtonFor(m => m.IncludePackage, "Please INCLUDE pumpkin and stickers ($8)", new {@checked="checked"})
-                                1 Pumpkin &amp; Stickers ($8.00 per child)
-                            </label>
-                            <label for="IncludePackage2">                                
-                                @Html.RadioButtonFor(m => m.IncludePackage, "One pumpkin NO stickers ($6)", new {id="IncludePackage2"})
-                                1 Pumpkin NO Stickers ($6.00 per child)
-                            </label>
-                        </fieldset>
+                        </label>                        
                     </div>
                     <div class="group">
                         <h4>Adults</h4>
-                        <p>Adult admission is $3.00 per adult and does NOT include a pumpkin.</p>
                         <label>
-                            Number of Adults
+                            Number of Adults ($8.00ea. includes pumpkin)
                             @Html.TextBoxFor(m => m.NumberOfAdults, new { placeholder = "Number of Adults...", required = "required" })
                         </label>
                     </div>
@@ -157,8 +148,8 @@
     <div class="large-4 medium-6 column sidebar sidebar-right">
         <div class="inner">
             <h3>Please Note</h3>
-            <p>Tours run October 1st - 31st 2018<br>20 child minimum</p>
-            <p>Accept Cash and all major credit cards.  Debit cards NOT accepted.</p>
+            <p>Tours run October 1st - 31st<br>20 child minimum</p>
+            <p>Accept Cash and all major credit cards.</p>
             <br>
             <h3>Questions</h3>
             <p>Call<br>

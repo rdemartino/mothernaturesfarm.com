@@ -1,8 +1,14 @@
-﻿@{
+﻿@using mothernaturesfarm.web.Extensions
+@{
     ViewBag.Title = "School Tours & Birthday Parties";
     ViewBag.PgHdrPhoto = "photo-wide-parties.jpg";
-    ViewBag.MetaDescription = "Bring your class or have a party for a fun farm experience. Trips include a pumpkin, a hayride, air bounce, feeding the farm animals and Alexander's Adventure Maze.";
+    ViewBag.MetaDescription = "Bring your class or have a party for a fun farm experience. Trips include a pumpkin, a hayride, feeding the farm animals and Alexander's Adventure Maze.";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    DateTime schoolTourBeginDate = Convert.ToDateTime(Resources.Strings.SchoolToursBeginDate);
+    DateTime schoolTourEndDate = Convert.ToDateTime(Resources.Strings.SchoolToursEndDate);
+    DateTime bDayTimeStart = Convert.ToDateTime(Resources.Strings.BDayPartyTimeStart);
+    DateTime bDayTimeEnd = Convert.ToDateTime(Resources.Strings.BDayPartyTimeEnd);
 }
 @Html.Partial("_PageHeader")
 <div class="row content-block blue medium-collapse box white-border">
@@ -10,23 +16,30 @@
         <div class="inner">
             <h3>School Tours</h3>
             <p>
-                October 1st - 31st, 2018<br>
+                @schoolTourBeginDate.ToString("MMMM dnn", true) - @schoolTourEndDate.ToString(" dnn", true)<br/>
                 Monday - Friday<br>
-                9am to 3pm
+                @schoolTourBeginDate.ToString("htt") to @schoolTourEndDate.ToString("htt")
             </p>
             <p>                
                 <a href="/tourreservation" class="button expanded">Reserve Online</a>
             </p>
             <p>
                 <strong>20 children or more</strong><br>
-                $8.00 per child<br>
-                $3.00 per adult
+                @Resources.Strings.SchoolTourCostPerPerson per person
             </p>
             <p>
                 <strong>25 children or more</strong><br>
                 includes a tour guide
             </p>
-            <p>Accept Cash and all major credit cards.  Debit cards NOT accepted.</p>
+            <p>
+                Accept Cash and all major credit cards.<br />
+            </p>
+            <p>
+                $10 minimum on credit card purchases.
+            </p>
+            <p>
+                Sales inside the farm are CASH ONLY.
+            </p>
             <p>&nbsp;</p>
         </div>
     </div>
@@ -34,19 +47,38 @@
     <div class="large-8 medium-6 column">
         <div class="inner">
             <h2>Dear Teachers,</h2>
-            <p>It's that time of year, fall is here! It's time for the fun filled field trips to Mother Nature's Farm. We have added some new things and have changed some, of course they are all for the best, come see for yourself.</p>
+            <p>
+                It's that time of year, fall is here! It's time for the fun filled field trips to 
+                Mother Nature's Farm. We have added some new things and have changed some, of course 
+                they are all for the best, come see for yourself.
+            </p>
 
             <div class="image-box content float-left border blue" style="background-image: url(/Content/Images/photo-party-1.jpg);"><img src="/Content/Images/img.png" alt="School Trips at Mother Nature's Farm" /></div>
 
-            <p>Bring your class, or your whole school for a fun farm experience. Trips include an OZ pumpkin, a hayride, the spider web crawl, the air bounce, feeding the farm animals and Alexander's Adventure Maze. Our shady picnic area is available for you to bring your sack lunch or you can visit Maneau's Munchies. Enjoy the great outdoors and let your children run off that extra energy before you go back to class.</p>
+            <p>
+                Bring your class, or your whole school for a fun farm experience. Trips include an OZ 
+                pumpkin, a hayride, the spider web crawl, feeding the farm animals 
+                and Alexander's Adventure Maze. Our shady picnic area is available for you to bring your 
+                sack lunch or you can visit Maneau's Munchies. Enjoy the great outdoors and let your children 
+                run off that extra energy before you go back to class.
+            </p>
 
-            <p>School tours start October 1st, 2018 and end October 31st, 2018, Monday through Friday from 9am to 3pm. Please schedule online or call soon, reservations fill up fast.</p>
+            <p>
+                School tours start @schoolTourBeginDate.ToString("MMMM dnn", true) and end @schoolTourEndDate.ToString("MMMM dnn", true), Monday through 
+                Friday from @schoolTourBeginDate.ToString("htt") to @schoolTourEndDate.ToString("htt"). Please schedule online or call soon, reservations fill up fast.
+            </p>
 
-            <p>If you book a group of 20 children or more the cost is $8.00 per child and $3.00 per adult, does not include a tour guide. If you book a tour of 25 children or more it will include a tour guide. You also have the option to go with 1 pumpkin per child and NO stickers for $6.00. Please remind your parents that siblings need to be added in class numbers or they will be charged full price at the gate.</p>
+            <p>
+                If you book a group of 20 children or more the cost is @Resources.Strings.SchoolTourCostPerPerson per person, does not include a tour guide. If you book a tour of 25 children or more it will 
+                include a tour guide. Please remind your parents that siblings need to be added in class numbers or 
+                they will be charged full price at the gate.
+            </p>
 
             <div class="image-box content float-right border blue small" style="background-image: url(/Content/Images/photo-party-2.jpg);"><img src="/Content/Images/img.png" alt="Field Trips at Mother Nature's Farm" /></div>
 
-            <p>We accept cash and all major credit cards. We do not accept P.O. numbers or debit cards.<!-- For more information please call 480-892-5874.--></p>
+            <p>
+                We accept cash and all major credit cards. We do not accept P.O. numbers.
+            </p>
 
             <p>
                 Thank you!<br />
@@ -60,13 +92,19 @@
     <div class="large-8 medium-6 column">
         <div class="inner">
             <h2>Host your next party or event at the farm!</h2>
-            <p>Birthday parties at the farm with a 10 child minimum include a pumpkin for each child to take home, stickers to decorate their pumpkins, the hayride, spider web crawl, Alexander’s Adventure Maze, the animals and a private air bounce all for $100.00 plus $10.00 per child and $5.00 per adult for entrance into the farm and to tag along on the hayride.</p>
+            <p>
+                Birthday parties at the farm with a 10 child minimum include a pumpkin for each child to 
+                take home, the hayride, spider web crawl, 
+                Alexander’s Adventure Maze, the animals and a private air bounce all for $100.00 plus 
+                $10.00 per person.
+            </p>
 
             <div class="image-box content float-right border green" style="background-image: url(/Content/Images/photo-party-3.jpg);"><img src="/Content/Images/img.png" alt="Private Parties at Mother Nature's Farm" /></div>
 
-            <p>You are welcome to bring food, cake, and party activities. 4 tables will be reserved for 2 hours but guests may stay at the farm as long as they wish once your party has ended.</p>
-
-            <p><em><strong style="font-weight: bold;">Please Note:</strong> Pumpkins are not included with the adult admission.</em></p>
+            <p>
+                You are welcome to bring food, cake, and party activities. 4 tables will be reserved 
+                for 2 hours but guests may stay at the farm as long as they wish once your party has ended.
+            </p>
         </div>
     </div>
     <div class="large-4 medium-6 column sidebar sidebar-right">
@@ -74,25 +112,23 @@
             <h3>Birthday Parties</h3>
             <p>
                 7 Days a Week<br>
-                9am to 9pm
+                @bDayTimeStart.ToString("htt") to @bDayTimeEnd.ToString("htt")
             </p>
-            <p><strong>Note: On October 31st, <br>we close at 6pm.</strong></p>
 
             <p>
                 <a href="/partyreservation" class="button expanded">Reserve Online</a>
             </p>
 
             <p>
-                $10.00 per child<br>
-                $5.00 per adult
+                @Resources.Strings.PartyResCostPerPerson per person
             </p>
             
             <p>
                 <strong>Fire Pit Area</strong><br>
-                additional $25
+                additional @Resources.Strings.FirePitCost
             </p>
 
-            <p>Accept Cash and all major credit cards.  Debit cards NOT accepted.</p>
+            <p>Accept Cash and all major credit cards.</p>
         </div>
     </div>
 </div>
