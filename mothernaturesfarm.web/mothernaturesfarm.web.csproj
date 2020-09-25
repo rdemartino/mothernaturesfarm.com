@@ -196,6 +196,13 @@
     <Content Include="android-chrome-384x384.png" />
     <Content Include="apple-touch-icon.png" />
     <Content Include="Content\Images\coupon.jpg" />
+    <Content Include="Content\Images\covid-clean.png" />
+    <Content Include="Content\Images\covid-health.png" />
+    <Content Include="Content\Images\covid-healthy.png" />
+    <Content Include="Content\Images\covid-mask.png" />
+    <Content Include="Content\Images\covid-sani.png" />
+    <Content Include="Content\Images\covid-sixfeet.png" />
+    <Content Include="Content\Images\covid-wash.png" />
     <Content Include="Content\Images\facebook-icon.png" />
     <Content Include="Content\Images\family-alexander.jpg" />
     <Content Include="Content\Images\family-brooke.jpg" />
@@ -382,6 +389,7 @@
     <Content Include="Views\Home\FAQ.cshtml" />
     <None Include="Properties\PublishProfiles\Azure Dev.pubxml" />
     <None Include="Properties\PublishProfiles\Production.pubxml" />
+    <Content Include="Views\Home\Covid.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

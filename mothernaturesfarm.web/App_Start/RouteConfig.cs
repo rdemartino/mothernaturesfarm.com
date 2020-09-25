@@ -15,6 +15,7 @@ namespace mothernaturesfarm.web
             routes.MapRoute("Christmas", "christmas", new { Controller = "Home", Action = "Christmas" });
             routes.MapRoute("ContactUs", "contactus", new { Controller = "Home", Action = "ContactUs" });
             routes.MapRoute("Coupons", "coupons", new { Controller = "Home", Action = "Coupons" });
+            routes.MapRoute("Covid", "covid", new { Controller = "Home", Action = "Covid" });
             routes.MapRoute("FAQ", "faq", new { Controller = "Home", Action = "FAQ" });
             routes.MapRoute("FuturePlans", "futureplans", new { Controller = "Home", Action = "FuturePlans" });
             routes.MapRoute("OurStory", "OurStory", new { Controller = "Home", Action = "OurStory" });

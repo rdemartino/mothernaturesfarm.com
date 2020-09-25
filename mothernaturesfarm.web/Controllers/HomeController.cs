@@ -71,6 +71,12 @@ namespace mothernaturesfarm.web.Controllers
 
             return (View("CouponsRegistered", new VMCoupon()));
         }
+
+        [HttpGet]
+        public ActionResult Covid()
+        {
+            return (View());
+        }
         [HttpPost]
         public ActionResult NewsletterSignup(string email)
         {

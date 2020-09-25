@@ -104,7 +104,8 @@ body {
 		a {
 			top: -7px;
 		    position: relative;
-		    margin-left: 20px;
+		    margin-left: 5px;
+			padding: 5px 2px 5px;
 		}
 	}
 }
@@ -155,6 +156,18 @@ body {
 }
 .facebook-icon {
 	background-image: url($baseurl+'/Content/Images/facebook-icon.png');
+	background-size: 60px 60px;
+	background-position: 0 -30px;
+	width: 30px;
+	height: 30px;
+	display: block;
+	text-indent: -5000px;
+	&:hover {
+		background-position: 0 0;
+	}
+}
+.instagram-icon {
+	background-image: url($baseurl+'/Content/Images/instagram-icon.png');
 	background-size: 60px 60px;
 	background-position: 0 -30px;
 	width: 30px;
@@ -370,60 +383,82 @@ body {
 
 body.main-nav-open {
 	overflow: hidden;
+
 	&:before {
 		content: '';
 		display: block;
 		position: fixed;
-		top: 0; bottom: 0;
-		left: 0; right: 0;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
 		z-index: 100;
-		background: $brand-blue;//$white;
+		background: $brand-blue; //$white;
 	}
+
 	#header-menu {
 		display: block;
 		position: fixed;
-		top: 0; bottom: 0;
-		left: 0; right: 0;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
 		z-index: 102;
 		height: auto;
 		background: transparent;
+
 		&.menu {
 			padding-top: $box-margin;
 			line-height: 40px;
+
 			a {
 				color: $white;
 			}
 		}
 	}
+
 	.footer-scene {
 		position: fixed;
 		bottom: 0;
-		left: 0; right: 0;
+		left: 0;
+		right: 0;
 		z-index: 101;
 	}
+
 	.more-link {
 		display: none;
 	}
+
 	.submenu {
 		display: block;
 		background: none;
 		transform: none;
+
 		li {
 			width: 50%;
 			float: left;
 		}
 	}
+
 	.social {
 		position: fixed;
 		left: 10px;
 		bottom: 24px;
+
 		a {
-		    margin-left: 0;
+			margin-left: 0;
 		}
 	}
+
 	.facebook-icon {
-	    text-indent: 40px;
-	    line-height: 30px;
+		text-indent: 40px;
+		line-height: 30px;
+	}
+
+	.instagram-icon {
+		margin-left:100px;
+		text-indent: 35px;
+		line-height: 30px;
 	}
 }
 // Mobile Nav
