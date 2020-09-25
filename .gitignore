@@ -268,3 +268,4 @@ __pycache__/
 /mothernaturesfarm.web/Smtp.config
 /mothernaturesfarm.web/MachineKey.config
 /Documents
+.DS_Store

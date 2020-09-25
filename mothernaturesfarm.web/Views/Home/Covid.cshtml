@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "Let's work together<br>to play safe";
+    ViewBag.PgHdrPhoto = "photo-wide-story.jpg";
+    ViewBag.MetaDescription = "In accordance with CDC, state and local guidelines, we'll be implementing a number of Covid-related safety precautions.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("_PageHeader")
+
+<style>
+    h3 {
+        font-size: 24px;
+    }
+    .box .intro {
+        font-size: 18px;
+        line-height: 24px;
+        text-align: center;
+        margin: 20px auto 50px;
+        max-width: 700px;
+    }
+    .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
+        float: left;
+    }
+    .covid-items {
+        text-align: center;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #ccc;
+    }
+    .covid-items p {
+        min-height: 50px;
+    }
+    .covid-items img {
+        max-width: 100px;
+        margin: 0 auto 20px;
+    }
+</style>
+<div class="row content-block box white-border">
+    <div class="column">
+        <div class="inner">
+            <p class="intro">Here at Mother Nature's Farm we can't wait to welcome you back for our 29th anniversary season and are committed to the health and safety of our employees and guests as we celebrate this momentous occasion. In accordance with CDC, state and local guidelines, we'll be implementing a number of Covid-related safety precautions and invite you to join us in working together to PLAY SAFE this fall on our 47 acre farm.</p>
+
+            <div class="row covid-items">
+                <div class="medium-6 large-4 column">
+                    <img src="/Content/Images/covid-sani.png" style="width:100%;" border="0">
+                    <h3>Hand Sanitizer</h3>
+                    <p>An increased number of hand sanitizer stations.</p>
+                </div>
+                <div class="medium-6 large-4 column">
+                    <img src="/Content/Images/covid-health.png" style="width:100%;" border="0">
+                    <h3>Employee Health</h3>
+                    <p>Daily employee health screenings and temp checks.</p>
+                </div>
+                <div class="medium-6 large-4 column">
+                    <img src="/Content/Images/covid-clean.png" style="width:100%;" border="0">
+                    <h3>Cleaning</h3>
+                    <p>Vigorous cleaning procedures before, during & after opening.</p>
+                </div>
+                <div class="medium-6 large-4 column">
+                    <img src="/Content/Images/covid-sixfeet.png" style="width:100%;" border="0">
+                    <h3>Six Feet</h3>
+                    <p>Please keep 6ft between your group and others.</p>
+                </div>
+                <div class="medium-6 large-4 column">
+                    <img src="/Content/Images/covid-wash.png" style="width:100%;" border="0">
+                    <h3>Wash Hands</h3>
+                    <p>Use hand sanitizer and/or wash hands frequently.</p>
+                </div>
+                <div class="medium-6 large-4 column">
+                    <img src="/Content/Images/covid-mask.png" style="width:100%;" border="0">
+                    <h3>Masks</h3>
+                    <p>Guests have been asked to wear masks whereever distancing is not possible and in indoor buildings. (In Boutique & On Hay Ride)</p>
+                </div>
+                <div class="medium-6 large-4 column">
+                    <img src="/Content/Images/covid-healthy.png" style="width:100%;" border="0">
+                    <h3>Healthy</h3>
+                    <p>Please visit only when healthy - if you have a fever or other symptoms of COVID-19, or have been exposed to someone who tested positive, please stay home.</p>
+                </div>
+            </div>
+            <p>According to the Center for Disease Control and Prevention, an inherent risk of exposure to COVID-19 exists in any public place where people are present. COVID-19 is an extremely contagious disease that can lead to severe illness and death. Senior citizens and guests with underlying medical conditions are especially vulnerable.  By visiting, you are on behalf of yourself or any invitees, voluntarily assuming all risks related to exposure to COVID-19 or any other disease.</p>
+        </div>
+    </div>
+</div>
+
